@@ -114,12 +114,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   bootstrap-sass (~> 3.2.0)
-=======
   angular-rails-templates
   bower-rails
->>>>>>> master
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
