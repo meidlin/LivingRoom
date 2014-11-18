@@ -114,12 +114,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
+
   bcrypt (~> 3.1.7)
-=======
+
   angular-rails-templates
   bower-rails
->>>>>>> master
+
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
