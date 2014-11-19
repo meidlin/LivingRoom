@@ -1,18 +1,25 @@
 @import 'bootstrap';
 
 body {
-  background-image: url('background-couch.jpg');
+  background-image: url('http://fc02.deviantart.net/fs13/f/2007/007/e/0/PURPLE_GRADIENT_WALLPAPER_by_Sexy81.jpg');
 
+}
+
+h1 {
+  font-family: Story Book;
+  color: white;
+  font-size: 80px;
+  text-align: center;
 }
 
 .signup_button {
   position: absolute;
-  top: 35px;
+  top: 150px;
   left: 1180px;
 }
 .login_button {
   position: absolute;
-  top: 35px;
+  top: 150px;
   left: 1100px;
 }
 .dropdown-toggle {
@@ -37,4 +44,22 @@ body {
 .container-fluid {
   background-color: black;
 }
+
+#user_header {
+  color: white;
+  position: absolute;
+  left: 1100px;
+  top: 180px;
+}
+
+a {
+  color: grey;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 1250px;
+  top: 23px;
+}
+
 
