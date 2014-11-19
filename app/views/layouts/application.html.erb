@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>Livingroom</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,6 +10,30 @@
 <body>
 
 <%= yield %>
+=======
+  <title>LivingRoom</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" type='application.css.scss'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="user_header">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log Out", session_path("current") %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %> or
+      <%= link_to "Log In", new_session_path %>
+    <% end %>
+ </div>
+    <div class="container">
+        <% flash.each do |name,msg| %>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <% end %>
+
+        <%= yield %>
+    </div> 
+>>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
 
 </body>
 </html>
