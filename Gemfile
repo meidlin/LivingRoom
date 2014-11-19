@@ -9,6 +9,16 @@ gem 'bower-rails'
 
 gem 'angularjs-rails'
 
+gem 'factory_girl_rails'
+
+group :development, :test do
+
+  #add in the gem for rspec
+  gem 'rspec-rails', '~> 3.0.0'
+
+   #add validation-association matchers
+  gem 'shoulda-matchers', require: false
+end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 # Use postgresql as the database for Active Record

@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117231645) do
+ActiveRecord::Schema.define(version: 20141119225722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.integer  "users_id"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groups", ["users_id"], name: "index_groups_on_users_id", using: :btree
+
+  create_table "lists", force: true do |t|
+    t.integer  "movies_id"
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lists", ["movies_id"], name: "index_lists_on_movies_id", using: :btree
+
+  create_table "movies", force: true do |t|
+    t.integer  "list_id"
+    t.string   "title"
+    t.string   "description"
+    t.string   "rating"
+    t.string   "genre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "movies", ["list_id"], name: "index_movies_on_list_id", using: :btree
 
   create_table "sessions", force: true do |t|
     t.datetime "created_at"
