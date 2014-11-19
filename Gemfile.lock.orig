@@ -113,9 +113,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
+  angular-rails-templates
+  bcrypt (~> 3.1.7)
+  bootstrap-sass (~> 3.2.0.2)
+=======
   angularjs-rails
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.2.0)
+>>>>>>> styling
   bower-rails
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)

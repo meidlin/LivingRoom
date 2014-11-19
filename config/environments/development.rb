@@ -19,12 +19,9 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
-<<<<<<< HEAD
-=======
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
->>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.

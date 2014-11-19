@@ -1,6 +1,5 @@
 require File.expand_path('../boot', __FILE__)
 
-<<<<<<< HEAD
 # Pick the frameworks you want:
 require "active_model/railtie"
 # require "active_record/railtie"
@@ -9,19 +8,15 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
-=======
+
 require 'rails/all'
->>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-<<<<<<< HEAD
-module Livingroom
-=======
 module LivingRoom
->>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

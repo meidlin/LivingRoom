@@ -12,14 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
-//= require turbolinks
-//= require_tree .
-=======
 //= require angular
-//= require anguler-ui-router
 //= require bootstrap
 //= require_tree .
 
     
->>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
+
