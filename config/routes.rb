@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  root "user#index"
-=======
   
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
@@ -13,7 +10,6 @@ Rails.application.routes.draw do
   root 'users#index'
 end
 
->>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

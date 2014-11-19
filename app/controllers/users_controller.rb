@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
+
 end
-=======
+
 
    skip_before_filter :authorize
    
@@ -25,6 +25,5 @@ end
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
-end
+  
 
->>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
