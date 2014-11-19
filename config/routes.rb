@@ -64,8 +64,7 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-<<<<<<< HEAD
-end
-=======
+
+
 
 >>>>>>> 0475e7e1293c4d138b91aaece1e17e02230a83a1
