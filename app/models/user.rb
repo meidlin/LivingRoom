@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates_uniqueness_of :email
-  has_many :groups
+  has_many :usergroups
+  has_many :users, through: :usergroups
+
+
   has_many :lists
   has_many :movies, through: :lists
 end
