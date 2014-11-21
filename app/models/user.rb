@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email,:password
   validates_uniqueness_of :email
   has_many :usergroups
-  has_many :users, through: :usergroups
+  has_many :groups, through: :usergroups
 
 
   has_many :lists
