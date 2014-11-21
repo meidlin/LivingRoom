@@ -1,4 +1,5 @@
 class List < ActiveRecord::Base
-  has_many :movies
-  has_many :users
+  has_many :movielists
+  has_many :movies, through: :movielists
+  belongs_to :users
 end
