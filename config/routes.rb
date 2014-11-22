@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
-  get 'signup', to: 'users#new', as: 'signup'
+  get 'signup', to: 'users#index', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'movies', to: 'movies#index', as: 'movies'
+
 
   resources :sessions
   resources :users

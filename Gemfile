@@ -11,6 +11,8 @@ gem 'angularjs-rails'
 
 gem 'factory_girl_rails'
 
+gem 'better_errors', '~> 2.0.0'
+
 group :development, :test do
 
   #add in the gem for rspec
