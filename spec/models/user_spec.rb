@@ -10,5 +10,11 @@ RSpec.describe User, :type => :model do
   it { should have_many (:groups)}
   it { should have_many (:lists)}
 
-  it 'should not hav'
+  it 'email should be formatted "a@a.com"' do
+
+  end
+  it 'should not have an email without @ or .' do
+      should !allow_value('gmail').
+                 for(:email)
+    end
 end
