@@ -7,36 +7,14 @@
   <%= stylesheet_link_tag 'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <h1>LivingRoom</h1>
-  <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-glyphicons.css" rel="stylesheet" type='application.css.scss'>
-  <%= csrf_meta_tags %> -->
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+  <div class="app-name">
+  <h1>LivingRoom</h1>
+  </div>
+ <div class="box1"></div>
+ <div class="box2"></div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ACCOUNT <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Manage Movie Lists</a></li>
-            <li><a href="#">Manage Movie Groups</a></li>
-            <li><a href="#">Manage Account</a></li>
-            <li><a href="Log Out">Log Out</a></li>
-          </ul>
-        </li>
-      </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Browse Movies">
@@ -45,19 +23,16 @@
       </form>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
+      
 
-  <!-- Large modal -->
+<div class="signup-logo">
+<h1>Sign Up</h1>
+</div>
 
-<a href="button" class="signup_button" data-toggle="modal" data-target="#signupModal">SIGN UP</a>
-
-<div class="modal fade bs-example-modal-md" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <h1>Sign Up</h1>
-
+<div class="signup-form">
 <%= form_for User.new, url: {action: "create"} do |f| %>
   <% if User.new.errors.any? %>
     <div class="error_messages">
@@ -68,7 +43,9 @@
         <% end %>
       </ul>
     </div>
+    </div>
   <% end %>
+
 
   <div class="field">
     <%= f.label :email %><br />
@@ -89,13 +66,11 @@
   </div>
 </div>
 
-<a href="button" class="login_button" data-toggle="modal" data-target="#loginModal">LOG IN</a>
+<div class="login-logo">
+<h1>Log In</h1>
+</div>
 
-<div class="modal fade bs-example-modal-md" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <h1>Log In</h1>
-
+<div class="login-form">
 <%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :email %><br />
@@ -106,17 +81,22 @@
     <%= password_field_tag :password %>
   </div>
   <div class="actions"><%= submit_tag "Submit" %></div>
+</div>
 <% end %>
     
     </div>
   </div>
 </div>
-  <div id="user_header">
+ <div id="user_header">
     <% if current_user %>
       <%= current_user.email %>
-     
- 
+       <%= link_to "Log Out", session_path("current") %>
+    <% else %>
+      <%= link_to movies_path %> or
+      <%= link_to new_session_path %>
     <% end %>
+</div>
+     
  </div>
     <div class="container">
         <% flash.each do |name,msg| %>
@@ -125,14 +105,7 @@
 
         <%= yield %>
     </div> 
-  <div class="row">
-  <div class="col-m-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img data-src="holder.js/100%x180" alt="...">
-    </a>
-</div>
-</div>
-</div>
-  </div>
-</body>
-</html>
+
+
+
+

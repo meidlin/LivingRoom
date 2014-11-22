@@ -13,7 +13,7 @@ private
   helper_method :current_user
 
   def authorize
-    redirect_to login_url, alert: "Not Authorized" if current_user.nil?
+    redirect_to login_url, alert: "*PLEASE LOGIN" if current_user.nil?
   end
 end
 
