@@ -8,7 +8,10 @@ describe SessionsController, :type => :controller do
 		expect(response).to have_http_status(200)
 	end
 
-	it 'creates a new session' do
-		
+	it 'should create a new session on login' do
+		post :create, user: {name: "James", email:"a@a.com"}
+
+		assigns[:user].should_not be_new_record
+		expect(response).to be_success
 	end
 end

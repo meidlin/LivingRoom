@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
 RSpec.describe Group, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"
@@ -7,4 +8,5 @@ RSpec.describe Group, :type => :model do
   	WDI.name = 'WDI 10-11'
   	expect(WDI.name).to eq('WDI 10-11')
   end
+  it {should have_many(:users)}
 end

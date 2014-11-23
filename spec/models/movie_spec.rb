@@ -6,5 +6,4 @@ RSpec.describe Movie, :type => :model do
   end
   it "should have a description" do
   end
-  it ""
 end
