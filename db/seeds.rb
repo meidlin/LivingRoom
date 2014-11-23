@@ -6,4 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-rtkey = ENV["RT_CLIENT_ID"]
+rt_key = ENV["RT_CLIENT_ID"]
+uri = HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?apikey=" + rt_key)
+rottentomatoes = JSON.parse(uri.body)
+rtarray = []
+
+rottentomatoes.movies.each do |x|
+	rtarray.push(x)
+end
+
