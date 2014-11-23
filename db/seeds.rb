@@ -11,7 +11,11 @@ uri = HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new
 rottentomatoes = JSON.parse(uri.body)
 rtarray = []
 
-rottentomatoes.movies.each do |x|
+rottentomatoes['movies'].each do |x|
 	rtarray.push(x)
 end
 
+rtarray.each do |x|
+	new_movie = Movie.new(p)
+	new_movie.save
+end
