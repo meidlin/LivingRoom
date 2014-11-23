@@ -16,6 +16,8 @@ rottentomatoes['movies'].each do |x|
 end
 
 rtarray.each do |x|
-	new_movie = Movie.new(p)
+	new_movie = Movie.new
+	new_movie.title = x['title']
+	new_movie.description = x['synopsis']
 	new_movie.save
 end
