@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141122020653) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,26 +48,12 @@ ActiveRecord::Schema.define(version: 20141122020653) do
   add_index "movielists", ["list_id"], name: "index_movielists_on_list_id", using: :btree
   add_index "movielists", ["movie_id"], name: "index_movielists_on_movie_id", using: :btree
 
-  create_table "movielists", force: true do |t|
-    t.integer  "movie_id"
-    t.integer  "list_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "movielists", ["list_id"], name: "index_movielists_on_list_id", using: :btree
-  add_index "movielists", ["movie_id"], name: "index_movielists_on_movie_id", using: :btree
-
   create_table "movies", force: true do |t|
     t.integer  "list_id"
     t.string   "title"
-    t.text     "description"
-    t.integer  "critic_rating"
-    t.integer  "user_rating"
+    t.string   "description"
+    t.string   "rating"
     t.string   "genre"
-    t.integer  "runtime"
-    t.integer  "rt_id"
-    t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
