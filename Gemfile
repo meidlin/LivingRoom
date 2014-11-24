@@ -15,6 +15,8 @@ gem 'better_errors', '~> 2.0.0'
 
 gem 'httparty'
 
+gem 'angular-rails-templates'
+
 group :development, :test do
 
   #add in the gem for rspec
