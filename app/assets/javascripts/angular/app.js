@@ -1,1 +1,1 @@
-angular.module('myApp', ['ui.router', 'pubnub.angular.service']);
+angular.module('myApp', ['ui.router', 'pubnub.angular.service', 'templates']);
