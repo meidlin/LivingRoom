@@ -1,5 +1,5 @@
 <!-- start header -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="headerController">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -19,19 +19,18 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Friends</a></li>
+            <li ng-class="{ active: isActive('/') }"><a href="/">Profile</a></li>
+            <li ng-class="{ active: isActive('/') }"><a href="/">Friends</a></li>
             <li class="divider"></li>
-            <li><a ui-sref="chat">Chatroom</a></li>
+            <li ng-class="{ active: isActive('/') }"><a ui-sref="chat">Chatroom</a></li>
             <li class="divider"></li>
-            <li><a href="#">Log Out</a></li>
+            <li ng-class="{ active: isActive('/') }"><a href="/">Log Out</a></li>
           </ul>
         </li>        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<a ui-sref="chat">Chatroom</a>
 <!-- end header -->
 <div ui-view></div>
 
@@ -119,6 +118,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Groups</a></li>
+        <li><a ui-sref="chat">Chatroom</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
