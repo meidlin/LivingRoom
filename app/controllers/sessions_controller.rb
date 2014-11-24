@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-   skip_before_filter :authorize
+   skip_before_action :authorize
   
   def new
     # Present an empty login form
@@ -17,11 +17,9 @@ class SessionsController < ApplicationController
         # then see if user authenticates
     if user && user.authenticate(params[:password])
             # sets the cookie to the browser
-            session[:user_id] = user.id
-            redirect_to users_url, notice: "Logged in!"
+            session[:user_id] = user.id.to_s
+            redirect_to users_path
     else
-        flash.now.alert = "Email or password is invalid"
-        render "new"
             redirect_to new_sessions_path
     end
   end

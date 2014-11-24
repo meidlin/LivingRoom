@@ -10,8 +10,9 @@
 </head>
 <body>
   <div class="app-name">
-  <h1>LivingRoom</h1>
+  <h1> LivingRoom </h1>
   </div>
+
  <div class="box1"></div>
  <div class="box2"></div>
 
@@ -26,10 +27,9 @@
     </div>
   </div>
 </nav>
-      
 
 <div class="signup-logo">
-<h1>Sign Up</h1>
+<h1>SIGN UP</h1>
 </div>
 
 <div class="signup-form">
@@ -59,15 +59,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions"><%= f.submit "Sign Up" %></div>
+  <div class="actions"><%= f.submit "SUBMIT" %></div>
 <% end %>
-    
-    </div>
-  </div>
-</div>
 
 <div class="login-logo">
-<h1>Log In</h1>
+<h1>LOG IN</h1>
 </div>
 
 <div class="login-form">
@@ -80,7 +76,7 @@
     <%= label_tag :password %><br />
     <%= password_field_tag :password %>
   </div>
-  <div class="actions"><%= submit_tag "Submit" %></div>
+  <div class="actions"><%= submit_tag "SUBMIT" %></div>
 </div>
 <% end %>
     
@@ -90,9 +86,9 @@
  <div id="user_header">
     <% if current_user %>
       <%= current_user.email %>
-       <%= link_to "Log Out", session_path("current") %>
+       <%= link_to "Log Out", sessions_path("current") %>
     <% else %>
-      <%= link_to movies_path %> or
+      <%= link_to users_path %> or
       <%= link_to new_session_path %>
     <% end %>
 </div>
@@ -105,6 +101,15 @@
 
         <%= yield %>
     </div> 
+
+
+
+    
+
+
+
+
+
 
 
 

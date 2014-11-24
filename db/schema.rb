@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119225722) do
+ActiveRecord::Schema.define(version: 20141121200517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20141119225722) do
 
   add_index "lists", ["movies_id"], name: "index_lists_on_movies_id", using: :btree
 
+  create_table "movielists", force: true do |t|
+    t.integer  "movie_id"
+    t.integer  "list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "movielists", ["list_id"], name: "index_movielists_on_list_id", using: :btree
+  add_index "movielists", ["movie_id"], name: "index_movielists_on_movie_id", using: :btree
+
   create_table "movies", force: true do |t|
     t.integer  "list_id"
     t.string   "title"
@@ -53,11 +63,22 @@ ActiveRecord::Schema.define(version: 20141119225722) do
     t.datetime "updated_at"
   end
 
+  create_table "usergroups", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "usergroups", ["group_id"], name: "index_usergroups_on_group_id", using: :btree
+  add_index "usergroups", ["user_id"], name: "index_usergroups_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
   end
 
 end

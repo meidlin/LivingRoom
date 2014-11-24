@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'movies', to: 'movies#index', as: 'movies'
 
 
-  resources :sessions
+  resource :sessions, only: [:create, :new, :destroy]
   resources :users
 
   root 'users#index'
