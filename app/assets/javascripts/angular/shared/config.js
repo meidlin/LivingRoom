@@ -14,6 +14,11 @@ angular.module('myApp')
       controller: 'chatController'
     })
 
+    .state('movie', {
+      url: '/movie',
+      templateUrl: 'movie.html',
+      controller: 'movieController'
+    })
     // .state('planet', {
     //   url: '/planet/:id',
     //   templateUrl: 'planet.html',
