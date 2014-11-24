@@ -16,13 +16,20 @@ angular.module('myApp')
 
     .state('movie', {
       url: '/movie',
-      templateUrl: 'movie.html',
+      templateUrl: "movie.html",
       controller: 'movieController'
     })
-    // .state('planet', {
-    //   url: '/planet/:id',
-    //   templateUrl: 'planet.html',
-    //   controller: 'planetController'
-    // });
+
+    .state('list', {
+      url: '/list',
+      templateUrl: 'list.html',
+      controller: 'listController'
+    })
+
+    .state('group', {
+      url: '/group',
+      templateUrl: 'group.html',
+      controller: 'groupController'
+    })
 
 });
