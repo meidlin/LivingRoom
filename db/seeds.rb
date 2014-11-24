@@ -19,5 +19,10 @@ rtarray.each do |x|
 	new_movie = Movie.new
 	new_movie.title = x['title']
 	new_movie.description = x['synopsis']
+	new_movie.rt_id = x['id'].to_i
+	new_movie.runtime = x['runtime']
+	new_movie.critic_rating = x['ratings']['critics_score']
+	new_movie.user_rating = x['ratings']['audience_score']
+	new_movie.image_url = x['posters']['thumbnail']
 	new_movie.save
 end

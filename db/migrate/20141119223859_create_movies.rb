@@ -3,9 +3,13 @@ class CreateMovies < ActiveRecord::Migration
     create_table :movies do |t|
       t.references :list, index: true
       t.string :title
-      t.string :description
-      t.string :rating
+      t.text :description
+      t.integer :critic_rating
+      t.integer :user_rating
       t.string :genre
+      t.integer :runtime
+      t.integer :rt_id
+      t.string :image_url
 
       t.timestamps
     end
