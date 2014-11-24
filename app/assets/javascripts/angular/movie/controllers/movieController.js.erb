@@ -1,4 +1,8 @@
 angular.module('myApp')
-.controller('movieController', function(){
-
-})
+.controller('movieController', ['$stateParams','$scope', 'api' ,function($stateParams, $scope, api){
+  console.log(api.getMovies());
+  api.getMovies()
+  .then(function(data){
+    $scope.movies = data.data;
+  });
+}])
