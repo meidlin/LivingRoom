@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 # we are going to be using Rails routes for api calls
   scope 'api', defaults: {format: :json} do
     resources :movies, only: [ :show, :index, :create, :update, :destroy]
-    resources :users, only: [:show, :index]
   end
   
   resources :sessions
