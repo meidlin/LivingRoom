@@ -4,8 +4,8 @@ class UsersController < ApplicationController
    before_action :set_user, only: [:show, :edit, :update, :destroy]
    
   def index
-    @users = User.all
-    @movies = Movie.all
+    users = User.all
+    render json: users, status: 200
   end
 
   def new
@@ -22,7 +22,6 @@ class UsersController < ApplicationController
           redirect_to root_path, notice: 'User was successfully created.' 
         }
         format.json { render action: 'index', status: :created, location: @user }
-        # render json: user, status: 201
       else
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
