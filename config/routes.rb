@@ -2,13 +2,14 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#index', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+  # get 'logout', to: 'sessions#destroy', as: 'logout'
+  delete "sessions/" => "sessions#destroy", as: :destroy_session
   # get 'movies', to: 'movies#index', as: 'movies'
 # we are going to be using Rails routes for api calls
   scope 'api', defaults: {format: :json} do
     resources :movies, only: [ :show, :index, :create, :update, :destroy]
   end
-
+  
   resources :sessions
   resources :users
 
