@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    raise 'hello'
     user = User.where(email: params[:email]).first
         # first make sure we actually find a user
         # then see if user authenticates
