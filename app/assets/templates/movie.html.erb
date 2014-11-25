@@ -1,6 +1,8 @@
-<div class="container" ng-repeat="movie in movies">
-Title:
-{{movie.title}}
-<br>
-<img src="{{movie.image_url}}" />
+<div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden" ng-repeat="movie in movies">
+	<div style="width: 30%">
+		Title:
+		{{movie.title}}
+		<br>
+		<img src="{{movie.image_url}}" />
+	</div>
 </div>
