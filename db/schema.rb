@@ -51,9 +51,13 @@ ActiveRecord::Schema.define(version: 20141122020653) do
   create_table "movies", force: true do |t|
     t.integer  "list_id"
     t.string   "title"
-    t.string   "description"
-    t.string   "rating"
+    t.text     "description"
+    t.integer  "critic_rating"
+    t.integer  "user_rating"
     t.string   "genre"
+    t.integer  "runtime"
+    t.integer  "rt_id"
+    t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

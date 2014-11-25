@@ -5,6 +5,7 @@ class UsersController < ApplicationController
    
   def index
     @users = User.all
+    @movies = Movie.all
   end
 
   def new
