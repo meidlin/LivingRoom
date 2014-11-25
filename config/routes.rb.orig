@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   scope 'api', defaults: {format: :json} do
     resources :movies, only: [ :show, :index, :create, :update, :destroy]
   end
+<<<<<<< HEAD
 
   resource :sessions, only: [:create, :new, :destroy]
+=======
+  
+  resources :sessions
+>>>>>>> master
   resources :users
 
   root 'users#index'

@@ -24,7 +24,7 @@
             <li class="divider"></li>
             <li ><a ui-sref="chat">Chatroom</a></li>
             <li class="divider"></li>
-            <li ><a href="/#">Log Out</a></li>
+            <li><%= link_to "Log Out", destroy_session_path, method: :delete, class: 'logbutton' %> </li>
           </ul>
         </li>        
       </ul>
