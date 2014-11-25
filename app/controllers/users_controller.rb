@@ -21,7 +21,8 @@ class UsersController < ApplicationController
           session[:user_id] = @user.id.to_s
           redirect_to @user, notice: 'User was successfully created.' 
         }
-        format.json { render action: 'show', status: :created, location: @user }
+        format.json { render action: 'index', status: :created, location: @user }
+        render json: user, status: 201
       else
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
