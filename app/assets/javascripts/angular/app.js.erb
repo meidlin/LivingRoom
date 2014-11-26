@@ -1,1 +1,16 @@
-angular.module('myApp', ['ui.router', 'pubnub.angular.service', 'templates']);
+angular.module('myApp', ['ui.router', 'pubnub.angular.service', 'templates', 'ui.bootstrap'])
+  
+.controller('CarouselDemoCtrl', function ($scope) {
+  $scope.myInterval = 5000;
+  var slides = $scope.slides = [];
+  $scope.addSlide = function() {
+    var newWidth = 600 + slides.length + 1;
+    slides.push({
+
+    });
+  };
+  for (var i=0; i<4; i++) {
+    $scope.addSlide();
+  }
+});
+

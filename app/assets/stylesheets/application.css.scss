@@ -1,8 +1,9 @@
-@import 'bootstrap';
+// @import 'bootstrap';
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 // *= require_tree .
 // *= require_self
 body {
-  background-color: white;
+  background-color: rgb(229,228,223);
 }
 @font-face{
   font-family: 'Story Book';
@@ -60,8 +61,6 @@ body {
   left: 212px;
   top: -67px;
   color: black;
-
-
 }
 
 .actions {
@@ -73,17 +72,12 @@ body {
 #user_header {
   color: white;
   position: absolute;
-  left: 1095px;
+  left: 1100px;
   top: 98px;
 }
 
 a {
   color: grey;
-}
-
-
-.thumbnail {
-  display: inline-block;
 }
 
 .box1 {
@@ -108,3 +102,35 @@ a {
 .field {
   color: black;
 }
+
+.container {
+  display: inline;
+  height: 200px; 
+  width: 500px;
+  overflow: hidden;
+}
+.wrapper {
+  display: inline;
+}
+
+.movie-image {
+  margin-top: 0px;
+  border: 3px solid black;
+   padding: 0, 10px, 0, 10px;
+}
+
+.movie-scroll {
+  margin-top: 50px;
+  margin-left: 10px;
+  padding: 0, 10px, 0, 10px;
+}
+
+.rating-runtime {
+  font-size: 15px;
+  margin-top: -16px;
+}
+
+.thumb-icon {
+  size: 25px;
+}
+

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :movies, only: [ :show, :index, :create, :update, :destroy]
   end
 
-  resource :sessions, only: [:create, :new, :destroy]
+  resources :sessions
   resources :users
 
   root 'users#index'

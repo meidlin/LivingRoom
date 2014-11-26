@@ -1,8 +1,45 @@
-<div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden" ng-repeat="movie in movies">
-	<div style="width: 30%">
-		Title:
-		{{movie.title}}
-		<br>
-		<img src="{{movie.image_url}}" />
-	</div>
+<div class="movie-scroll">
+  <carousel style="width: 1500px; height: 600px;" ng-controller="CarouselDemoCtrl">   
+
+    <slide ng-repeat="movie in movies" active="movie.slide" style="display: inline-block;" border-color="black">
+    	<div style="width: 100%">
+
+        <!-- <div class="movie-title">      
+    		  <strong>{{movie.title}}</strong>
+        </div>
+        <br> -->
+        <div class="movie-image">
+          <img src="{{movie.image_url}}" style="width:150px; height: 190px;" />
+        </div>
+
+        <div class="description" ng-show="description">
+          {{movie.description}}
+        </div>
+        <br>
+  
+        <div class="rating-runtime" class="thumb-icon">
+          <span class="glyphicon glyphicon-thumbs-up">
+          </span>
+          User
+          {{movie.user_rating}}
+          <br>
+          <span class="glyphicon glyphicon-thumbs-up">
+          </span>
+          Critic
+          {{movie.critic_rating}}
+          <br>
+        </div>
+
+          <strong>Runtime:</strong>
+          {{movie.runtime}}
+        </div>
+        <br>
+      </div>
+    </slide>
+  </carousel>  
 </div>
+
+
+
+
+
