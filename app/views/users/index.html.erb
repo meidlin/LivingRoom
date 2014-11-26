@@ -31,6 +31,11 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<script type="text/javascript">
+  var currentUser = <%=raw current_user.to_json %>;
+</script>
+
 <!-- end header -->
 <div ui-view></div>
 

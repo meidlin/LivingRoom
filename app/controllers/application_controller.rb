@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # don't need to be in a session to interact with an api
   protect_from_forgery with: :null_session
-
-    before_filter :authorize
+  skip_before_filter  :verify_authenticity_token
+  # before_filter :authorize
 
 private
 
