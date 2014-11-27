@@ -3,6 +3,7 @@ angular.module('myApp')
   console.log(api.getMovies());
   api.getMovies()
   .then(function(data){
+  	console.log(data);
     $scope.movies = data.data;
   });
 }])
