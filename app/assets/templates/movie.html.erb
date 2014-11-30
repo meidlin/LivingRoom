@@ -1,41 +1,47 @@
 <div class="movie-scroll">
-  <carousel style="width: 1500px; height: 600px;" ng-controller="CarouselDemoCtrl">   
+  <carousel style="width: 1500px; height: 600px;">   
 
-    <slide ng-repeat="movie in movies" active="movie.slide" style="display: inline-block;" border-color="black">
-    	<div style="width: 100%">
+    <div class="slider">
+      <div ng-repeat="movie in movies" style="display: inline-block;" border-color="black" class="movie">
+       <div style="width: 100%">
 
         <div class="movie-image">
-          <img src="{{movie.image_url}}" style="width:150px; height: 190px;" />
+          <img src="{{movie.image_url}}" style="width:150px; height: 190px;"/>
         </div>
 
         <div class="description" ng-show="description">
           {{movie.description}}
         </div>
         <br>
-  
+
         <div class="rating-runtime" class="thumb-icon">
           <span class="glyphicon glyphicon-thumbs-up">
           </span>
-          User
+          <strong>Users:</strong>
           {{movie.user_rating}}
           <br>
           <span class="glyphicon glyphicon-thumbs-up">
           </span>
-          Critic
+          <strong>Critics:</strong>
           {{movie.critic_rating}}
           <br>
         </div>
-
+        <div class="runtime">
           <strong>Runtime:</strong>
           {{movie.runtime}}
         </div>
-        <br>
       </div>
-    </slide>
-  </carousel>  
-</div>
+      <br>
+    </div>
+  </div>
 
-
-
+  <div id="slider-nav" class="arrow icon">
+    <span class="glyphicon glyphicon-chevron-left">
+      <button data-dir="prev">Previous</button>
+    </span>
+    <span class="glyphicon glyphicon-chevron-right">
+      <button data-dir="next">Next</button>
+    </span>
+  </div>
 
 

@@ -31,6 +31,7 @@ GEM
       railties (>= 3.1)
       sprockets
       tilt
+    angular-ui-bootstrap (0.10.0)
     angularjs-rails (1.3.2)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
@@ -151,6 +152,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  angular-ui-bootstrap
   angularjs-rails
   bcrypt (~> 3.1.7)
   better_errors (~> 2.0.0)

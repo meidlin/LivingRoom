@@ -1,5 +1,6 @@
 angular.module('myApp')
-.controller('movieController', ['$stateParams','$scope', 'api' ,function($stateParams, $scope, api){
+
+.controller('movieController', ['$stateParams','$scope', 'api' , function($stateParams, $scope, api){
   console.log(api.getMovies());
   api.getMovies()
   .then(function(data){
@@ -7,4 +8,8 @@ angular.module('myApp')
   });
 }])
 
+function CarouselDemoCtrl($scope) {
+  $scope.myInterval = 3000;
+  $scope.slides = $scope.movie;
+}
  
