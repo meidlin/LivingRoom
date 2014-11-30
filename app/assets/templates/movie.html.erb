@@ -2,7 +2,7 @@
   <carousel style="width: 1500px; height: 600px;">   
 
     <div class="slider">
-      <div ng-repeat="movie in movies" style="display: inline-block;" border-color="black" class="movie">
+      <div ng-repeat="movie in movies" style="display: inline-block;" border-color="black" class="movie" id="movie">
        <div style="width: 100%">
 
         <div class="movie-image">
@@ -35,12 +35,12 @@
     </div>
   </div>
 
-  <div id="slider-nav" class="arrow icon">
-    <span class="glyphicon glyphicon-chevron-left">
-      <button data-dir="prev">Previous</button>
+  <div id="slider-nav" class="arrow-icon">
+    
+      <button data-dir="prev"><span class="glyphicon glyphicon-chevron-left"></button>
     </span>
-    <span class="glyphicon glyphicon-chevron-right">
-      <button data-dir="next">Next</button>
+    
+      <button data-dir="next"><span class="glyphicon glyphicon-chevron-right"></button>
     </span>
   </div>
 
