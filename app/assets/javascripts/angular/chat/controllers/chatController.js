@@ -1,6 +1,9 @@
 angular.module('myApp')
-.controller('chatController', ['$rootScope','$scope', '$location', 'PubNub', function($rootScope, $scope, $location, PubNub){
-	console.log('stuff');
+.controller('chatController', ['$rootScope','$scope', '$location', 'PubNub', 'UserService', function($rootScope, $scope, $location, PubNub, UserService){
+  //States the user that is logged in
+  $scope.currentUser = UserService.user;
+
+  //Check to see if PubNub is intialized
 	if (!$rootScope.initialized) {
 
     // Initialize the PubNub service
@@ -10,9 +13,10 @@ angular.module('myApp')
         ssl: true,
 	      uuid:$scope.userId
 		});
+    //Once initialized set to true so that it will not be called again
     $rootScope.initialized = true;
 	}
-	$scope.channel = 'The Chat';
+	$scope.channel = 'The Living Room';
 
 	$scope.messages = ['Welcome to ' + $scope.channel];
   // Subscribe to the Channel
@@ -22,7 +26,7 @@ angular.module('myApp')
   $scope.publish = function() {
     PubNub.ngPublish({
       channel: $scope.channel,
-      message: "[" + $scope.userId + "] " + $scope.newMessage
+      message: "[" + $scope.currentUser.email + "] " + $scope.newMessage
     });
     $scope.newMessage = '';
   };
@@ -49,9 +53,8 @@ angular.module('myApp')
   // });
   
   // // Populate message history (optional)
-  // PubNub.ngHistory({
-  //   channel: $scope.channel,
-  //   count: 500
-  // });
-console.log($scope.channel);
+  PubNub.ngHistory({
+    channel: $scope.channel,
+    count: 500
+  });
 }]);

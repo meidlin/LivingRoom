@@ -13,6 +13,20 @@ angular.module('myApp')
       return promise;
     },
 
+    //Create a movie from Rotten Tomatoes API
+    createMovie: function(movieTitle, movieSynopsis, rtId, movieRuntime, criticScore, userScore, movieImage ){
+      $http.post('api/movies', {
+        movie:
+        {title: movieTitle, 
+         description: movieSynopsis,
+         rt_id: rtId,
+         runtime: movieRuntime,
+         critic_rating: criticScore,
+         user_rating: userScore,
+         image_url: movieImage }
+       })
+    },
+
     getLists: function(){
       // STATUS OF PROMISE: Fulfilled, Rejected, Pending
       var promise = $http.get('api/lists')
@@ -32,6 +46,7 @@ angular.module('myApp')
       console.log('add relation to movie and list!!!');
     },
 
+    //Search for a movie through Rotten Tomatoes
     searchMovies: function(movieLookup){
     var promise = $http({
         method: 'GET',

@@ -1,24 +1,31 @@
 <br>
 <br>
 <br>
+
+<div ui-view>
+	
+
+</div>
+
 <input ng-model="movieSearched">
 <button ng-click="searchMovies(movieSearched)">Search </button>
+	<div ng-show="oneMovie" ng-model="movieInfo">
+		{{movieInfo.title}}<br>
+		<!-- from our database -->
+		{{movieInfo.description}}
+		<!-- from rotten tomatoes -->
+		{{movieInfo.synopsis}}
+		
+	</div>
 
-<div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden" ng-repeat="movie in movies">
+<div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden;" ng-repeat="movie in movies">
 	<div style="width: 30%">
 		<p ng-model="movieId">{{movie.id}}</p>
 		Title:
 		{{movie.title}}
 		<br>
-		<img src="{{movie.image_url}}" />
+		<img src="{{movie.image_url}}" ng-click="movieClicked(movie)"/>
 		<button ng-click="addMovieToList(movie.id)">Add Movie to List</button>
 
 	</div>
 </div>
-
-<!-- movies_id: null,
-name: "test",
-description: null,
-created_at: "2014-11-26T05:07:07.410Z",
-updated_at: "2014-11-26T05:07:07.410Z",
-user_id: null -->

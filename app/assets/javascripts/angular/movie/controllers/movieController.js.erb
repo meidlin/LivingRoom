@@ -21,14 +21,23 @@ angular.module('myApp')
 	$scope.lists = data.data;
   });
 
+  //Click on individual movie to pass movie id
+  $scope.movieClicked = function(id){
+  	console.log( id);
+  	$scope.oneMovie = true;
+  	$scope.movieInfo = id;
+  }
 
+
+  //Search for Movie through Rotten Tomatoes API
   $scope.searchMovies = function(searchedMovie){
   	// console.log(searchedMovie);
   	api.searchMovies(searchedMovie)
   	.then(function(data){
-  		console.log(data.data);
+  		$scope.movieInfo = data.data.movies[0];
+  		console.log($scope.movieInfo);
   	});
-  }
+  };
 
   // $scope.addMovie = function(movie){
   // 	console.log(movie.id);
@@ -40,7 +49,7 @@ angular.module('myApp')
   $scope.addMovieToList = function(movieId){
   	// console.log(movieId);
   	api.createMovielist(movieId);
-  }
+  };
 
 
 }])
