@@ -1,18 +1,35 @@
 angular.module('myApp')
-.controller('movieController', ['$stateParams','$scope', 'api' ,function($stateParams, $scope, api){
-  console.log(api.getMovies());
+.controller('movieController', ['$stateParams','$scope', 'api', 'UserService' ,function($stateParams, $scope, api, UserService){
+  // console.log(api.getMovies());
+
+  //shows current user logged in
+  $scope.currentUser = UserService.user;
+
+  console.log($scope.currentUser);
   //allow Movie template to see all movies
   api.getMovies()
   .then(function(data){
-  	console.log(data);
+  	// console.log(data);
     $scope.movies = data.data;
   });
+
 
   //allow Movie template to see all Lists
   api.getLists()
 	.then(function(data){
+	console.log(data.data[0].user_id);
 	$scope.lists = data.data;
   });
+
+
+  $scope.searchMovies = function(searchedMovie){
+  	// console.log(searchedMovie);
+  	api.searchMovies(searchedMovie)
+  	.then(function(data){
+  		console.log(data.data);
+  	});
+  }
+
   // $scope.addMovie = function(movie){
   // 	console.log(movie.id);
   // 	movieArray = $scope.lists[0].movie_id

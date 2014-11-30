@@ -1,5 +1,5 @@
 angular.module('myApp')
-.controller('listController', function($scope, UserService, api){
+.controller('listController', ['$scope', 'UserService', 'api', function($scope, UserService, api){
 	$scope.currentUser = UserService.user;
 	console.log($scope.currentUser);
 
@@ -19,4 +19,4 @@ angular.module('myApp')
 		$scope.lists.push({name: $scope.listName});
 	};
 
-});
+}]);

@@ -1,3 +1,9 @@
+<br>
+<br>
+<br>
+<input ng-model="movieSearched">
+<button ng-click="searchMovies(movieSearched)">Search </button>
+
 <div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden" ng-repeat="movie in movies">
 	<div style="width: 30%">
 		<p ng-model="movieId">{{movie.id}}</p>
@@ -6,6 +12,7 @@
 		<br>
 		<img src="{{movie.image_url}}" />
 		<button ng-click="addMovieToList(movie.id)">Add Movie to List</button>
+
 	</div>
 </div>
 
