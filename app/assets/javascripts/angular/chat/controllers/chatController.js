@@ -55,6 +55,6 @@ angular.module('myApp')
   // // Populate message history (optional)
   PubNub.ngHistory({
     channel: $scope.channel,
-    count: 500
+    count: 50
   });
 }]);
