@@ -25,8 +25,12 @@ angular.module('myApp')
     createList: function(something, currentUser){
       $http.post('api/lists', {list:{ name: something, user_id: currentUser.id } });
       console.log('almost there');
-    }
+    },
 
+    createMovielist: function(id){ //listId
+      $http.post('api/movielists', {movielist: {movie_id: id} }); //list_id: listId
+      console.log('add relation to movie and list!!!');
+    }
     // showPlanet: function(planetID){
     //   // STATUS OF PROMISE: Fulfilled, Rejected, Pending
     //   var promise = $http.get('/api/planets/' + planetID)

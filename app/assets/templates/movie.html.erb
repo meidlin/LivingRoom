@@ -1,9 +1,17 @@
 <div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden" ng-repeat="movie in movies">
 	<div style="width: 30%">
+		<p ng-model="movieId">{{movie.id}}</p>
 		Title:
 		{{movie.title}}
 		<br>
 		<img src="{{movie.image_url}}" />
-		<button >Add Movie to List</button>
+		<button ng-click="addMovieToList(movie.id)">Add Movie to List</button>
 	</div>
 </div>
+
+<!-- movies_id: null,
+name: "test",
+description: null,
+created_at: "2014-11-26T05:07:07.410Z",
+updated_at: "2014-11-26T05:07:07.410Z",
+user_id: null -->

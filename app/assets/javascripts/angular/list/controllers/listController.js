@@ -16,7 +16,7 @@ angular.module('myApp')
 	$scope.addList = function(){
 		api.createList($scope.listName, $scope.currentUser);
 		// CLEAR the input after add planet
-		// $scope.lists.push(list);
+		$scope.lists.push({name: $scope.listName});
 	};
 
 });

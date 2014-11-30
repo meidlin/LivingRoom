@@ -1,9 +1,29 @@
 angular.module('myApp')
 .controller('movieController', ['$stateParams','$scope', 'api' ,function($stateParams, $scope, api){
   console.log(api.getMovies());
+  //allow Movie template to see all movies
   api.getMovies()
   .then(function(data){
   	console.log(data);
     $scope.movies = data.data;
   });
+
+  //allow Movie template to see all Lists
+  api.getLists()
+	.then(function(data){
+	$scope.lists = data.data;
+  });
+  // $scope.addMovie = function(movie){
+  // 	console.log(movie.id);
+  // 	movieArray = $scope.lists[0].movie_id
+  // 	id = movie.id;
+  // 	movieArray.push(id);
+  // };
+
+  $scope.addMovieToList = function(movieId){
+  	// console.log(movieId);
+  	api.createMovielist(movieId);
+  }
+
+
 }])

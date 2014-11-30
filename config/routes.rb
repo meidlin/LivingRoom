@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   scope 'api', defaults: {format: :json} do
     resources :movies, only: [ :show, :index, :create, :update, :destroy]
     resources :lists, only: [ :show, :index, :create, :update, :destroy]
+    resources :movielists, only: [ :show, :index, :create, :update, :destroy]
   end
   
   resources :sessions
