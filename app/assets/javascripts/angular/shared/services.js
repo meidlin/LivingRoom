@@ -31,7 +31,7 @@ angular.module('myApp')
     //Get all lists from database
     getLists: function(){
       // STATUS OF PROMISE: Fulfilled, Rejected, Pending
-      var promise = $http.get('api/lists')
+      var promise = $http.get('api/lists', {params: {user_id: 1} })
       .then(function(response) {
         return response;
       })

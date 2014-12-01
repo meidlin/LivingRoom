@@ -10,14 +10,15 @@ angular.module('myApp')
 	    PubNub.init({
 	      subscribe_key: 'sub-c-afabf17c-6a18-11e4-b944-02ee2ddab7fe',
 	      publish_key: 'pub-c-28c48402-cc66-488a-bb47-accd95f3900c',
-        ssl: true,
-	      uuid:$scope.userId
+        ssl: true
 		});
     //Once initialized set to true so that it will not be called again
     $rootScope.initialized = true;
 	}
+  //set the channel to The Living Room
 	$scope.channel = 'The Living Room';
 
+  //array of messages
 	$scope.messages = [];
   // Subscribe to the Channel
   PubNub.ngSubscribe({ channel: $scope.channel });
@@ -28,6 +29,7 @@ angular.module('myApp')
       channel: $scope.channel,
       message: "[" + $scope.currentUser.email + "] " + $scope.newMessage
     });
+    //publish a user's message to the Living Room channel
     $scope.newMessage = '';
   };
 
@@ -52,7 +54,7 @@ angular.module('myApp')
   //   channel: $scope.channel
   // });
   
-  // // Populate message history (optional)
+  // Populate message history, requires Storage and Playback enabled
   PubNub.ngHistory({
     channel: $scope.channel,
     count: 50
