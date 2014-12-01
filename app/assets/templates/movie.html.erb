@@ -15,7 +15,7 @@
 		{{movieInfo.description}}
 		<!-- from rotten tomatoes -->
 		{{movieInfo.synopsis}}
-		<button ng-click="addMovieToList(movieInfo.id)">Add Movie to List</button>
+		<button ng-click="addMovieToList(movieInfo.id, userList.id)">Add Movie to List</button>
 		<select ng-model="userList" ng-options="list.name for list in lists">
 		</select>
 	</div>

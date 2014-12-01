@@ -46,8 +46,8 @@ angular.module('myApp')
     },
 
     //Add relation between movie and list
-    createMovielist: function(id){ //listId
-      $http.post('api/movielists', {movielist: {movie_id: id} }); //list_id: listId
+    createMovielist: function(movieId, listId){ //listId
+      $http.post('api/movielists', {movielist: {movie_id: movieId, list_id: listId   } }); //list_id: listId
       console.log('add relation to movie and list!!!');
     },
 

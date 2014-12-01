@@ -47,9 +47,9 @@ angular.module('myApp')
   // 	movieArray.push(id);
   // };
 
-  $scope.addMovieToList = function(movieId){
+  $scope.addMovieToList = function(movieId, listId){
   	// console.log(movieId);
-  	api.createMovielist(movieId);
+  	api.createMovielist(movieId, listId);
   };
 
 
