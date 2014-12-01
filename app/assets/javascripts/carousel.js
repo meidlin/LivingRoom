@@ -4,29 +4,29 @@ $( document ).ready( function(){
 (function($) {
   var slider = $('div.slider').css('overflow', 'hidden'),
     imgs = slider.find('movie'),
-    imgWidth = '368px', //hard coded width of scroll 
+    imgWidth = '500px', //hard coded width of scroll 
     imgsLen = imgs.length,
-    current = 1,
+    current = 1, //keep track of where user is 
     totalImgsWidth = imgsLen * imgWidth;
 
 $('#slider-nav').show().find('button').on('click', function(){
-  var direction = $(this).data('dir');
-      loc = imgWidth;
+  var direction = $(this).data('dir'); //get data-dir attribute
+      loc = imgWidth; // 368px
 
 
   // update current value
-
+ 
   if ( direction === 'next') {
     current += 1; //2
   } else {
-      current -= 1; //0
+    current -= 1;
+  
   }
 
   if ( current === 0) {
-      current = imgsLen;
-      loc = totalImgsWidth - imgWidth;
-      direction = 'next';
-  } else if ( current -1 === imgsLen) {
+    current = imgsLen;
+    direction = 'next';
+  } else if ( current -1 === imgsLen ) {
       current = 1;
       loc = 0;
   }
@@ -44,8 +44,10 @@ function transition( container, loc, direction ) {
   container.animate({
     'margin-left': unit ? ( unit + loc) : loc
   });
+  
 }
 
 })(jQuery);
 
 });
+
