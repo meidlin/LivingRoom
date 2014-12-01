@@ -10,3 +10,7 @@ RSpec.describe List, :type => :model do
 
 end
 
+
+
+# behavior testing 
+# creating instances of the objets, calling methods and properties, to examine that it does do what you're expecting

@@ -2,11 +2,10 @@ require 'rails_helper'
 require 'shoulda/matchers'
 
 RSpec.describe Group, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-  it 'should have a name' do
-  	WDI = Group.new
-  	WDI.name = 'WDI 10-11'
-  	expect(WDI.name).to eq('WDI 10-11')
-  end
-  it {should have_many(:users)}
+ # shoulda matchers that model has validation on name. 
+	it 'should validate presence of name' do 
+  	# look up the syntax
+  	# {should validate(:name)}
+	end
 end
+
