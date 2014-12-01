@@ -2,117 +2,114 @@
 <html>
 <head>
   <title>LivingRoom</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-glyphicons.css" rel="stylesheet" type='application.css.scss'>
   <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
   <script src="https//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" href="application.css.scss">
+  <script src="ui-bootstrap-tpls-0.12.0.min.js"></script>
   <%= stylesheet_link_tag 'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="myApp">
-<% if !current_user %>  
-    <div class="app-name">
-    <h1>LivingRoom</h1>
-    </div>
-   <div class="box1"></div>
-   <div class="box2"></div>
-
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Browse Movies">
-          </div>
-          <button type="submit" class="submit-button">Submit</button>
-        </form>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-      
-
-  <div class="signup-logo">
-  <h1>Sign Up</h1>
+  <% if !current_user %>  
+  <div class="app-name">
+    <h1> LivingRoom </h1>
   </div>
 
-  <div class="signup-form">
+  <div class="box1"></div>
+  <div class="box2"></div>
+
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Browse Movies">
+    </div>
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="signup-logo">
+  <h1>SIGN UP</h1>
+</div>
+
+<div class="signup-form">
   <%= form_for User.new, url: {action: "create"} do |f| %>
-    <% if User.new.errors.any? %>
-      <div class="error_messages">
-        <h2>Form is invalid</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      </div>
-    <% end %>
-
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <div class="actions"><%= f.submit "Sign Up" %></div>
-  <% end %>
-      
-      </div>
-    </div>
-  </div>
-
-  <div class="login-logo">
-  <h1>Log In</h1>
-  </div>
-
-  <div class="login-form">
-  <%= form_tag sessions_path do %>
-    <div class="field">
-      <%= label_tag :email %><br />
-      <%= text_field_tag :email, params[:email] %>
-    </div>
-    <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
-    </div>
-    <div class="actions"><%= submit_tag "Submit" %></div>
-  </div>
-  <% end %>
-      
-      </div>
-    </div>
-  </div>
-   <div id="user_header">
-      <% if current_user %>
-        <%= current_user.email %>
-         <%= link_to "Log Out", session_path("current") %>
-      <% else %>
-        <%= link_to movies_path %> or
-        <%= link_to new_session_path %>
+  <% if User.new.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
       <% end %>
+    </ul>
   </div>
-       
-   </div>
-      <div class="container">
-          <% flash.each do |name,msg| %>
-              <%= content_tag :div, msg, id: "flash_#{name}" %>
-          <% end %>
-      </div> 
-  </body>
+</div>
+<% end %>
+
+
+<div class="field">
+  <%= f.label :email %><br />
+  <%= f.text_field :email %>
+</div>
+<div class="field">
+  <%= f.label :password %><br />
+  <%= f.password_field :password %>
+</div>
+<div class="field">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %>
+</div>
+<div class="actions"><%= f.submit "SUBMIT" %></div>
+<% end %>
+
+<div class="login-logo">
+  <h1>LOG IN</h1>
+</div>
+
+<div class="login-form">
+  <%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions"><%= submit_tag "SUBMIT" %></div>
+</div>
+<% end %>
+
+</div>
+</div>
+</div>
+<div id="user_header">
+  <% if current_user %>
+  <%= current_user.email %>
+  <%= link_to "Log Out", sessions_path("current") %>
+  <% else %>
+  <%= link_to users_path %> or
+  <%= link_to new_session_path %>
+  <% end %>
+</div>
+
+</div>
+<div class="container">
+  <% flash.each do |name,msg| %>
+  <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <% end %>
+</div> 
+</body>
 
 <% else %>
-
     <script type="text/javascript">
       var currentUser = <%=raw current_user.to_json %>;
-    </script>
-          <%= yield %>
-  </body>
+    </script>  
+<%= yield %>
+
+</body>
 <% end %>
+
