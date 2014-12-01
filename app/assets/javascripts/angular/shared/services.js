@@ -31,13 +31,21 @@ angular.module('myApp')
     //Get all lists from database
     getLists: function(){
       // STATUS OF PROMISE: Fulfilled, Rejected, Pending
-      var promise = $http.get('api/lists', {params: {user_id: 1} })
+      var promise = $http.get('api/lists')
+      // var promise = $http.get('api/lists', {user_id: 1})
       .then(function(response) {
         return response;
       })
       return promise;
     },
 
+    getListMovies: function(id){
+      var promise = $http.get('api/lists/' + id)
+      .then(function(response){
+        return response;
+      })
+      return promise;
+    },
 
     //Create list for user that is logged in
     createList: function(something, currentUser){

@@ -4,9 +4,13 @@ before_filter :authorize, except: [:create]
   	lists = List.all
     render json: lists, status: 200
   end
+
+  def show
+    list = List.find(params[:id])
+    render json: list.movies, status: 200
+  end
   
   def create
-    puts params.inspect
   	list = List.create(list_params)
   	render json: list, status: 201
   end

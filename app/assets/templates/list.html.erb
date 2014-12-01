@@ -1,12 +1,18 @@
-
+<br>
+<br>
+<br>
 <div>{{currentUser.email}}</div>
     <h3>List Name</h3>
     <input ng-model="listName">
     <h3>URL</h3>
     <button ng-click="addList()">Add</button>
+<div ng-repeat="movie in arrayMovies" style="display: inline-block">
+	<img src={{movie.image_url}}></img>
+	{{movie.title}}
+</div>
 
 <div ng-repeat="entry in lists">
-	<div>
+	<div ng-click="getMoviesForList(entry.id)">
 	{{entry.name}}
 	</div>
 </div>
