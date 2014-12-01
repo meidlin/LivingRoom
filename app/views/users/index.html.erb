@@ -17,9 +17,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href=""class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+          <a href=""class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li ><a href="/#">Profile</a></li>
+            <li ><a ui-sref="profile">Profile</a></li>
             <li ><a href="/#">Friends</a></li>
             <li class="divider"></li>
             <li ><a ui-sref="chat">Chatroom</a></li>
@@ -39,6 +39,8 @@
 <!-- end header -->
 <div ui-view></div>
 
+<div class="background-image">
+</div>
 
 <!-- footer navbar below -->
 <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
@@ -48,15 +50,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse col-xs-6 col-md-4" id="bs-example-navbar-collapse-1 ">
       <ul class="nav navbar-nav">
-        <li><a ui-sref="movie">Movies</a></li>
-        <li><a ui-sref="list">Lists</a></li>
+        
+        <li><a ui-sref="movie"><span class="glyphicon glyphicon-film" aria-hidden="true" class="film-icon"></a></li>
+        </span>
+        <li><a ui-sref="list"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" class="list-icon"></a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a ui-sref="group">Groups</a></li>
-        <li><a ui-sref="chat">Chatroom</a></li>
+        <li><a ui-sref="chat"><span class="glyphicon glyphicon-user" aria-hidden="true" class="chat-user"></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 <!-- end footer navbar -->

@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   // $locationProvider.html5Mode({enabled:true, requiredBase:true});
 
@@ -32,4 +32,9 @@ angular.module('myApp')
       controller: 'groupController'
     })
 
+    .state('profile', {
+      url: '/profile',
+      templateUrl: 'profile.html',
+      controller: 'profileController'
+    });
 });

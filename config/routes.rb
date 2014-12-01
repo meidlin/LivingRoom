@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :lists, only: [ :show, :index, :create, :update, :destroy]
     resources :movielists, only: [ :show, :index, :create, :update, :destroy]
   end
-  
+
   resources :sessions
   resources :users
 
