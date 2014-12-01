@@ -2,7 +2,7 @@ angular.module('myApp')
 .controller('chatController', ['$rootScope','$scope', '$location', 'PubNub', 'UserService', function($rootScope, $scope, $location, PubNub, UserService){
   //States the user that is logged in
   $scope.currentUser = UserService.user;
-
+  $scope.channels = PubNub.ngListChannels()
   //Check to see if PubNub is intialized
 	if (!$rootScope.initialized) {
 
@@ -20,16 +20,33 @@ angular.module('myApp')
 	$scope.channel = 'The Living Room';
 
   $scope.newChannel = function(){
-    console.log('working?');
+    PubNub.ngSubscribe({ channel: Math.random*100})
   };
 
+  $scope.unsubcribeChannel = function(){
+    PubNub.ngUnsubscribe({channel: $scope.channel});
+  };
 
 
 
   //array of messages
 	$scope.messages = [];
   // Subscribe to the Channel
-  PubNub.ngSubscribe({ channel: $scope.channel });
+  $scope.subscribe = function(){
+    PubNub.ngSubscribe({ channel: $scope.channel, message: $scope.handleMessage});
+    // Register for presence events, requires Presence enabled
+    $rootScope.$on(PubNub.ngPrsEv($scope.channel), function(ngEvent, payload) {
+      $scope.$apply(function() {
+        console.log(ngEvent);
+        if (payload.event.action == "join"){
+          $scope.users = PubNub.ngListPresence($scope.channel);
+        }
+        else if (payload.event.action == "leave"){
+          console.log('what is this', payload);
+        };
+      });
+    });
+  }
 
   // Create a publish() function in the scope
   $scope.publish = function() {
@@ -50,14 +67,9 @@ angular.module('myApp')
     });
   });
 
-  // Register for presence events, requires Presence enabled
-  $rootScope.$on(PubNub.ngPrsEv($scope.channel), function(ngEvent, payload) {
-    $scope.$apply(function() {
-      $scope.users = PubNub.ngListPresence($scope.channel);
-    });
-  });
 
-  // // Pre-Populate the user list (optional)
+
+  // Pre-Populate the user list (optional)
   // PubNub.ngHereNow({
   //   channel: $scope.channel
   // });
