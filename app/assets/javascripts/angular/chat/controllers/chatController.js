@@ -10,13 +10,21 @@ angular.module('myApp')
 	    PubNub.init({
 	      subscribe_key: 'sub-c-afabf17c-6a18-11e4-b944-02ee2ddab7fe',
 	      publish_key: 'pub-c-28c48402-cc66-488a-bb47-accd95f3900c',
-        ssl: true
+        ssl: true,
+        uuid: $scope.currentUser.email
 		});
     //Once initialized set to true so that it will not be called again
     $rootScope.initialized = true;
 	}
   //set the channel to The Living Room
 	$scope.channel = 'The Living Room';
+
+  $scope.newChannel = function(){
+    console.log('working?');
+  };
+
+
+
 
   //array of messages
 	$scope.messages = [];
@@ -42,12 +50,12 @@ angular.module('myApp')
     });
   });
 
-  // // Register for presence events (optional)
-  // $rootScope.$on(PubNub.ngPrsEv($scope.channel), function(ngEvent, payload) {
-  //   $scope.$apply(function() {
-  //     $scope.users = PubNub.ngListPresence($scope.channel);
-  //   });
-  // });
+  // Register for presence events, requires Presence enabled
+  $rootScope.$on(PubNub.ngPrsEv($scope.channel), function(ngEvent, payload) {
+    $scope.$apply(function() {
+      $scope.users = PubNub.ngListPresence($scope.channel);
+    });
+  });
 
   // // Pre-Populate the user list (optional)
   // PubNub.ngHereNow({
