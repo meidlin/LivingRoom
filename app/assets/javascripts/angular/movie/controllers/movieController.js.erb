@@ -17,8 +17,9 @@ angular.module('myApp')
   //allow Movie template to see all Lists
   api.getLists()
 	.then(function(data){
-	console.log(data.data[0].user_id);
+	// console.log(data.data[0].user_id);
 	$scope.lists = data.data;
+	console.log($scope.lists);
   });
 
   //Click on individual movie to pass movie id
@@ -35,7 +36,7 @@ angular.module('myApp')
   	api.searchMovies(searchedMovie)
   	.then(function(data){
   		$scope.movieInfo = data.data.movies[0];
-  		console.log($scope.movieInfo);
+  		// console.log($scope.movieInfo);
   	});
   };
 

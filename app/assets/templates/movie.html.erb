@@ -15,7 +15,9 @@
 		{{movieInfo.description}}
 		<!-- from rotten tomatoes -->
 		{{movieInfo.synopsis}}
-		
+		<button ng-click="addMovieToList(movieInfo.id)">Add Movie to List</button>
+		<select ng-model="userList" ng-options="list.name for list in lists">
+		</select>
 	</div>
 
 <div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden;" ng-repeat="movie in movies">
@@ -25,7 +27,6 @@
 		{{movie.title}}
 		<br>
 		<img src="{{movie.image_url}}" ng-click="movieClicked(movie)"/>
-		<button ng-click="addMovieToList(movie.id)">Add Movie to List</button>
 
 	</div>
 </div>

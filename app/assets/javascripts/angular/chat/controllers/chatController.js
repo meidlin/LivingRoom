@@ -18,7 +18,7 @@ angular.module('myApp')
 	}
 	$scope.channel = 'The Living Room';
 
-	$scope.messages = ['Welcome to ' + $scope.channel];
+	$scope.messages = [];
   // Subscribe to the Channel
   PubNub.ngSubscribe({ channel: $scope.channel });
 

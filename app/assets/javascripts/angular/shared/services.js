@@ -4,6 +4,7 @@ angular.module('myApp')
 
   return {
 
+    //Get all movies from database
     getMovies: function(){
       // STATUS OF PROMISE: Fulfilled, Rejected, Pending
       var promise = $http.get('api/movies')
@@ -27,6 +28,7 @@ angular.module('myApp')
        })
     },
 
+    //Get all lists from database
     getLists: function(){
       // STATUS OF PROMISE: Fulfilled, Rejected, Pending
       var promise = $http.get('api/lists')
@@ -36,11 +38,14 @@ angular.module('myApp')
       return promise;
     },
 
+
+    //Create list for user that is logged in
     createList: function(something, currentUser){
       $http.post('api/lists', {list:{ name: something, user_id: currentUser.id } });
       console.log('almost there');
     },
 
+    //Add relation between movie and list
     createMovielist: function(id){ //listId
       $http.post('api/movielists', {movielist: {movie_id: id} }); //list_id: listId
       console.log('add relation to movie and list!!!');
@@ -87,6 +92,8 @@ angular.module('myApp')
     // }
 
 }})
+
+//Service to get the user object info that is logged in through rails
 .service('UserService', function(){
   this.user = currentUser;
 })
