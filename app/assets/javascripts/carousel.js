@@ -3,7 +3,7 @@ $( document ).ready( function(){
 (function($) {
   var slider = $('div.slider').css('overflow', 'hidden'),
     imgs = slider.find('movie'),
-    imgWidth = '500px', //hard coded width of scroll 
+    imgWidth = '300px', //hard coded width of scroll 
     imgsLen = imgs.length,
     current = 1, //keep track of where user is 
     totalImgsWidth = imgsLen * imgWidth;
@@ -12,17 +12,23 @@ $('#slider-nav').show().find('button').on('click', function(){
   var direction = $(this).data('dir'); //get data-dir attribute
       loc = imgWidth; // 368px
 
-
-  // update current value
  
-  if ( direction === 'next') {
-    current += 1; //2
+  // update current value
+  if (direction == 'next') {
+    if (current < 5) {
+      current += 1; //2
+      transition(slider, loc , direction);
+    }
   } else {
-    current -= 1;
-  
+   if (current > 1) {
+      current -= 1; //2
+      transition(slider, loc , direction);
+    }
   }
 
-  transition(slider, loc , direction);
+
+
+  // transition(slider, loc , direction);
 });
 
 function transition( container, loc, direction ) {

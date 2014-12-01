@@ -170,6 +170,7 @@ a {
 
 .arrow-icon-right {
   float: right;
+  margin-top: -60px;
 }
 
 .arrow-icon-left, .arrow-icon-right {
@@ -177,9 +178,21 @@ a {
 button {
   background: none;
   border: none; 
-  font-size: 30px;
+  font-size: 40px;
   color: black;
 } 
   }
 button:focus {outline:0 !important;}
+
+.film-icon {
+  font-size: 30px;
+}
+
+.arrow-icon-left, .arrow-icon-right:hover {
+  color: white;
+}
+
+
+
+
 
