@@ -1,5 +1,4 @@
 $( document ).ready( function(){
-  console.log('Samantha');
 
 (function($) {
   var slider = $('div.slider').css('overflow', 'hidden'),
@@ -21,14 +20,6 @@ $('#slider-nav').show().find('button').on('click', function(){
   } else {
     current -= 1;
   
-  }
-
-  if ( current === 0) {
-    current = imgsLen;
-    direction = 'next';
-  } else if ( current -1 === imgsLen ) {
-      current = 1;
-      loc = 0;
   }
 
   transition(slider, loc , direction);
