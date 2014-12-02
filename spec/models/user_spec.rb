@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'shoulda/matchers'
 
 RSpec.describe User, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
   
   it { should validate_presence_of(:email)}
   it { should validate_presence_of(:password) }
@@ -18,4 +17,16 @@ RSpec.describe User, :type => :model do
       should !allow_value('gmail').
                 for(:email)
     end
+end
+
+describe User do 
+  it 'has an email' do
+    user = FactoryGirl.build(:a_user)
+    expect(user.email).to_not be_nil
+  end
+
+  it 'has a password' do
+    user = FactoryGirl.build(:a_user)
+    expect(user.password).to_not be_nil
+  end
 end
