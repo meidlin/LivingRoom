@@ -31,6 +31,11 @@
     border: solid 2px red;
 }
 
+.movieImage{
+	width: 150px;
+	height: 190px;
+}
+
 </style>
 <br>
 <br>
@@ -56,7 +61,7 @@
 
 	<div class="moviesColumn">
 		<div ng-repeat="movie in arrayMovies" style="display: block .col-md-4">
-			<img src={{movie.image_url}}></img>
+			<img src={{movie.image_url}} class="movieImage"></img>
 			{{movie.title}}
 		</div>
 	</div>
