@@ -73,10 +73,7 @@ angular.module('myApp')
     },
 
     getFood: function(){
-    var promise = $http({
-        method: 'GET',
-        url: 'http://www.corsproxy.com/feedmeapp.herokuapp.com/api/wdi/l3tsd0WD1',
-      })
+    var promise = $http.get('api/foods')
     .then(function(response){
         return response;
         })
