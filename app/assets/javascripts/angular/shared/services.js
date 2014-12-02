@@ -70,7 +70,20 @@ angular.module('myApp')
         })
       // console.log(movieLookup);
       return promise;
+    },
+
+    getFood: function(){
+    var promise = $http({
+        method: 'GET',
+        url: 'http://www.corsproxy.com/feedmeapp.herokuapp.com/api/wdi/l3tsd0WD1',
+      })
+    .then(function(response){
+        return response;
+        })
+      // console.log(movieLookup);
+      return promise;
     }
+
 
 
     // showPlanet: function(planetID){
