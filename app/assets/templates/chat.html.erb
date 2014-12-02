@@ -2,23 +2,23 @@
 <br>
 <div class="container">
 	
-	<div class="header1">
+	<div class="header1" style="width: 200px">
 		<h4>Online Users {{users.length}}</h4>
 	</div>
-	<div class="list-style">
-		<ul>
-			<li ng-repeat="user in users">{{user}}</li>
-		</ul>
+	<div class="list-style" style="margin-top: 10px; margin-left: 500px; width: 200px; height: 100px; background: white; overflow: scroll; border: 2px solid black; border-radius: 5px">
+		<div style>
+			<li style="list-style-type:none; padding-left: 10px" ng-repeat="user in users">{{user}}</li>
+		</div>
 	</div>
-	<div class="header2">
+<!-- 	<div class="header2">
 		<h4>Chat History {{messages.length}}</h4>
-	</div>
+	</div> -->
 	<div class="chat-form">
 		<form ng-submit='publish()'>
 		<input type="text" ng-model='newMessage' />
 		<input type="submit" value="Send"/>
-		<button ng-click="subscribe()">Subscribe to chat</button>
-		<button ng-click="unsubcribeChannel()" class="unsubscribe">Unsubscribe</button>
+		<!-- <button ng-click="subscribe()">Subscribe to chat</button>
+		<button ng-click="unsubcribeChannel()" class="unsubscribe">Unsubscribe</button> -->
 		</form>
 	</div>
 	<div class="well">

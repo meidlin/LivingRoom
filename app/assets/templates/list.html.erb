@@ -10,7 +10,8 @@
        <h2>Create Your List</h2>
       </div>
       <div class="current-email">
-      <h3>{{currentUser.email}}</h3><br>
+      <br>
+      <br>
       </div>
       <div class="input">
         <input ng-model="listName" placeholder="List Name">
@@ -30,7 +31,7 @@
   </div>
 
   <div class="moviesColumn">
-    <div ng-repeat="movie in arrayMovies" style="display: block .col-md-4">
+    <div ng-repeat="movie in arrayMovies" class= "col-md-1">
       <img src={{movie.image_url}} class="movieImage"></img>
     </div>
   </div>
