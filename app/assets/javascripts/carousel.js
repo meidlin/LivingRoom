@@ -1,4 +1,5 @@
-$( document ).ready( function(){
+// $( document ).ready( function(){
+window.onload=function() {
 
 (function($) {
   var slider = $('div.slider').css('overflow', 'hidden'),
@@ -46,5 +47,5 @@ function transition( container, loc, direction ) {
 
 })(jQuery);
 
-});
+};
 
