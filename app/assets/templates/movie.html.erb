@@ -14,20 +14,9 @@
 	{{movieInfo.description}}
 	<!-- from rotten tomatoes -->
 	{{movieInfo.synopsis}}
-	<button ng-click="addMovieToList(movieInfo.id, userList.id)">Add Movie to List</button>
+	<button ng-click="addMovieToList(movieInfo.id, userList.id)"> + List</button>
 	<select ng-model="userList" ng-options="list.name for list in lists | filter: {user_id: currentUser.id}">
 	</select>
-</div>
-
-<div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden;" ng-repeat="movie in movies">
-	<div style="width: 30%">
-		<p ng-model="movieId">{{movie.id}}</p>
-		Title:
-		{{movie.title}}
-		<br>
-		<img src="{{movie.image_url}}" ng-click="movieClicked(movie)"/>
-
-	</div>
 </div>
 
 <!-- samantha's css below -->
@@ -37,7 +26,7 @@
        <div style="width: 100%">
 
         <div class="movie-image">
-          <img src="{{movie.image_url}}" style="width:150px; height: 190px;"/>
+          <img src="{{movie.image_url}}" ng-click="movieClicked(movie)" style="width:150px; height: 190px;"/>
         </div>
 
         <div class="description" ng-show="description">

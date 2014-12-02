@@ -185,8 +185,11 @@ button {
 button:focus {outline:0 !important;}
 
 .icons{
-  margin-left: 1180px;
+  margin-left: 1080px;
+<<<<<<< HEAD
   color: black;
+=======
+>>>>>>> master
 }
 
 .arrow-icon-left, .arrow-icon-right:hover {
