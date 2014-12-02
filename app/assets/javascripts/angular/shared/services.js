@@ -63,7 +63,7 @@ angular.module('myApp')
     searchMovies: function(movieLookup){
     var promise = $http({
         method: 'GET',
-        url: 'http://www.corsproxy.com/api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=zf6bdxbz8w9wtrqjauznuqt4&q='+ movieLookup + '&page_limit=1',
+        url: 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=zf6bdxbz8w9wtrqjauznuqt4&q='+ movieLookup + '&page_limit=1',
       })
     .then(function(response){
         return response;
@@ -75,7 +75,7 @@ angular.module('myApp')
     getFood: function(){
     var promise = $http({
         method: 'GET',
-        url: 'http://www.corsproxy.com/feedmeapp.herokuapp.com/api/wdi/l3tsd0WD1',
+        url: 'http://feedmeapp.herokuapp.com/api/wdi/l3tsd0WD1',
       })
     .then(function(response){
         return response;
