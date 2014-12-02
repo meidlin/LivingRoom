@@ -26,10 +26,10 @@ angular.module('myApp')
       controller: 'listController'
     })
 
-    .state('group', {
-      url: '/group',
-      templateUrl: 'group.html',
-      controller: 'groupController'
+    .state('food', {
+      url: '/food',
+      templateUrl: 'food.html',
+      controller: 'foodController'
     })
 
     .state('profile', {
