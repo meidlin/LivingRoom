@@ -2,39 +2,40 @@
 
 
 .navigationColumn{
-	border: 1px black solid;
+	border: 3px grey solid;
 	height: 800px;
 	position:relative;
 	width: 14%;
 }
 
 .createList{
-	background-color:white;
+	background-color: hsla(120,100%,100%,0.7);
 }
 
 .currentLists{
-	background-color:yellow;
+	background-color: hsla(120,100%,100%,0.7);
 }
 
 .moviesColumn{
 	width: 82%;
 	height: 800px;
-	border: 1px solid black;
+	border: 3px solid grey;
 	float:right;
 	margin-top: -800px;
+	background-color: hsla(120,100%,100%,0.7);
 }
 
 .wrapper{
 	display: inline-block;
 	width: 100%;
 	height: 800px;
-    border: solid 2px red;
 }
 
 .movieImage{
 	width: 150px;
 	height: 190px;
 }
+
 
 
 </style>
@@ -53,17 +54,18 @@
 			<h3>My Lists</h3>
 			<div ng-repeat="entry in lists">
 				<div ng-click="getMoviesForList(entry.id)">
-				{{entry.name}}
+				<a>{{entry.name}}</a>
 				</div>
 			</div>
 		      
 		</div>
 	</div>
 
-	<div class="moviesColumn">
-		<div ng-repeat="movie in arrayMovies" class=".col-md-4">
+	<div class="moviesColumn row">
+		<div ng-repeat="movie in arrayMovies" class="col-md-4">
 			<img src={{movie.image_url}} class="movieImage"></img>
-			{{movie.title}}
+			<div> {{movie.title}}</div>
+			
 		</div>
 	</div>
 </div>
