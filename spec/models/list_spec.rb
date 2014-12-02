@@ -2,8 +2,9 @@ require 'rails_helper'
 require 'shoulda/matchers'
 
 RSpec.describe List, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
   it "should have a name" do
+  	mike = List.new(name:'mike list')
+  	expect(mike.name).to eq('mike list')
   end
   # verifies relationship between user and list
   it { should belong_to(:user) }
