@@ -1,14 +1,23 @@
+<br>
+<br>
+<br>
 <div class="container">
-	<h4>Online Users</h4>
-		<ul>
+
+	<h4>Online Users {{users.length}}</h4>
+		<ul style="overflow: scroll; height: 80px; width: 200px;">
 			<li ng-repeat="user in users">{{user}}</li>
 		</ul>
 	<h4>Chat History {{messages.length}}</h4>
 	<form ng-submit='publish()'>
 		<input type="text" ng-model='newMessage' />
 		<input type="submit" value="Send" />
+		<button ng-click="subscribe()">Subscribe to chat</button>
+		<button ng-click="unsubcribeChannel()">Unsubscribe</button>
 	</form>
 	<div class="well">
-		<ul><li ng-repeat="message in messages">{{message}}</li></ul>
+		<ul ng-model="channel">Welcome to {{channel}}</ul>
+		<ul style="overflow: scroll; height: 300px; width: 800px">
+			<li style="list-style-type: none" ng-repeat="message in messages">{{message}}</li>
+		</ul>
 	</div>
 </div>

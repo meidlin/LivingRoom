@@ -4,7 +4,8 @@
     "dependencies": {
       "angular": "latest",
       "angular-ui-router": "latest",
-      "pubnub-angular": "latest"
+      "pubnub-angular": "latest",
+      "angular-ui-bootstrap": "latest"
       // "threex"      : "git@github.com:rharriso/threex.git",
       // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
     }
@@ -16,3 +17,7 @@
     }
   }
 }
+
+
+
+

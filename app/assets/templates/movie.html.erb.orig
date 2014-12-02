@@ -1,0 +1,84 @@
+<<<<<<< HEAD
+<br>
+<br>
+<br>
+
+
+<!-- Rotten Tomatoes Search -->
+<input ng-model="movieSearched">
+<button ng-click="searchMovies(movieSearched)">Search </button>
+
+<div ng-show="oneMovie" ng-model="movieInfo">
+	{{movieInfo.title}}<br>
+	<!-- from our database -->
+	{{movieInfo.description}}
+	<!-- from rotten tomatoes -->
+	{{movieInfo.synopsis}}
+	<button ng-click="addMovieToList(movieInfo.id, userList.id)">Add Movie to List</button>
+	<select ng-model="userList" ng-options="list.name for list in lists | filter: {user_id: currentUser.id}">
+	</select>
+</div>
+
+<div class="container" style="display: inline-block; height: 200px; width: 500px; overflow:hidden;" ng-repeat="movie in movies">
+	<div style="width: 30%">
+		<p ng-model="movieId">{{movie.id}}</p>
+		Title:
+		{{movie.title}}
+		<br>
+		<img src="{{movie.image_url}}" ng-click="movieClicked(movie)"/>
+
+	</div>
+</div>
+=======
+<div class="movie-scroll">
+    <div class="slider">
+      <div ng-repeat="movie in movies" style="display: inline-block;" border-color="black" class="movie" id="movie">
+       <div style="width: 100%">
+
+        <div class="movie-image">
+          <img src="{{movie.image_url}}" style="width:150px; height: 190px;"/>
+        </div>
+
+        <div class="description" ng-show="description">
+          {{movie.description}}
+        </div>
+        <br>
+
+        <div class="rating-runtime" class="thumb-icon">
+          <span class="glyphicon glyphicon-thumbs-up">
+          </span>
+          <strong>Users:</strong>
+          {{movie.user_rating}}
+          <br>
+          <span class="glyphicon glyphicon-thumbs-up">
+          </span>
+          <strong>Critics:</strong>
+          {{movie.critic_rating}}
+          <br>
+        </div>
+        <div class="runtime">
+          <strong>Runtime:</strong>
+          {{movie.runtime}}
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div id="slider-nav">
+    <div class="arrow-icon-left">
+      <button data-dir="prev">
+      <span class="glyphicon glyphicon-chevron-left"></button>
+      </span>
+    </div>
+    <div class="arrow-icon-right">
+      <button data-dir="next">
+      <span class="glyphicon glyphicon-chevron-right"></button>
+      </span>
+    </div>
+  </div>
+
+</div>
+
+
+>>>>>>> samantha
