@@ -32,21 +32,34 @@ angular.module('myApp')
   //array of messages
 	$scope.messages = [];
   // Subscribe to the Channel
-  $scope.subscribe = function(){
-    PubNub.ngSubscribe({ channel: $scope.channel, message: $scope.handleMessage});
-    // Register for presence events, requires Presence enabled
-    $rootScope.$on(PubNub.ngPrsEv($scope.channel), function(ngEvent, payload) {
-      $scope.$apply(function() {
-        console.log(ngEvent);
-        if (payload.event.action == "join"){
-          $scope.users = PubNub.ngListPresence($scope.channel);
-        }
-        else if (payload.event.action == "leave"){
-          console.log('what is this', payload);
-        };
-      });
+  PubNub.ngSubscribe({ channel: $scope.channel, message: $scope.handleMessage});
+  // Register for presence events, requires Presence enabled
+  $rootScope.$on(PubNub.ngPrsEv($scope.channel), function(ngEvent, payload) {
+    $scope.$apply(function() {
+      console.log(ngEvent);
+      if (payload.event.action == "join"){
+        $scope.users = PubNub.ngListPresence($scope.channel);
+      }
+      else if (payload.event.action == "leave"){
+        console.log('what is this', payload);
+      };
     });
-  }
+  });
+  // $scope.subscribe = function(){
+  //   PubNub.ngSubscribe({ channel: $scope.channel, message: $scope.handleMessage});
+  //   // Register for presence events, requires Presence enabled
+  //   $rootScope.$on(PubNub.ngPrsEv($scope.channel), function(ngEvent, payload) {
+  //     $scope.$apply(function() {
+  //       console.log(ngEvent);
+  //       if (payload.event.action == "join"){
+  //         $scope.users = PubNub.ngListPresence($scope.channel);
+  //       }
+  //       else if (payload.event.action == "leave"){
+  //         console.log('what is this', payload);
+  //       };
+  //     });
+  //   });
+  // }
 
   // Create a publish() function in the scope
   $scope.publish = function() {

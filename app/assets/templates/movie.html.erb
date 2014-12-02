@@ -5,17 +5,18 @@
 
 
 <!-- Rotten Tomatoes Search -->
-<input ng-model="movieSearched">
-<button ng-click="searchMovies(movieSearched)"><span class="glyphicon glyphicon-search" </button>
+<input style="margin-left: 40vw; width: 300px" ng-model="movieSearched" placeholder="Search for a movie">
+<button ng-click="searchMovies(movieSearched)"><span class="glyphicon glyphicon-search"></button>
 </span>
-<div ng-show="oneMovie" ng-model="movieInfo">
-	{{movieInfo.title}}<br>
+<div ng-show="oneMovie" ng-model="movieInfo" style="width: 80vw; height: 250px; margin: auto; background: rgba(255,255,255, .5); padding: 10px; border-radius:10px;  ">
+	<h1>{{movieInfo.title}}</h1><br>
 	<!-- from our database -->
 	{{movieInfo.description}}
 	<!-- from rotten tomatoes -->
 	{{movieInfo.synopsis}}
+  <br>
 	<button ng-click="addMovieToList(movieInfo.id, userList.id)"> + List</button>
-	<select ng-model="userList" ng-options="list.name for list in lists | filter: {user_id: currentUser.id}">
+	<select ng-click="confirm()" ng-model="userList" ng-options="list.name for list in lists | filter: {user_id: currentUser.id}">
 	</select>
 </div>
 

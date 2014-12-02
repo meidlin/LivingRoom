@@ -4,5 +4,6 @@ angular.module('myApp')
 		.then(function(data){
 			console.log(data.data);
 			$scope.foods = data.data;
-		})
-}]);
+		});
+	}
+]);

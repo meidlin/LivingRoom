@@ -5,6 +5,8 @@ angular.module('myApp')
   //shows current user logged in
   $scope.currentUser = UserService.user;
 
+  $scope.confirm = function(){console.log($scope.userList);};
+
   console.log($scope.currentUser);
   //allow Movie template to see all movies
   api.getMovies()
@@ -23,10 +25,10 @@ angular.module('myApp')
   });
 
   //Click on individual movie to pass movie id
-  $scope.movieClicked = function(id){
-  	console.log( id);
+  $scope.movieClicked = function(movie){
+  	console.log(movie);
   	$scope.oneMovie = true;
-  	$scope.movieInfo = id;
+  	$scope.movieInfo = movie;
   }
 
 
@@ -49,6 +51,7 @@ angular.module('myApp')
 
   $scope.addMovieToList = function(movieId, listId){
   	alert("This movie was added to your list!");
+    api.createMovielist(movieId, listId);
   };
 
     //logic to prevent duplicate movies to list. 
