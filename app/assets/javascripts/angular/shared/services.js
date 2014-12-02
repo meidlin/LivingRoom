@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.service('api', function($http){
+.service('api', ['$http', function($http){
 
   return {
 
@@ -112,7 +112,7 @@ angular.module('myApp')
     //   $http.patch('api/planets/' + planet._id.$oid, {name: planet.name, image: planet.image});
     // }
 
-}})
+}}])
 
 //Service to get the user object info that is logged in through rails
 .service('UserService', function(){
