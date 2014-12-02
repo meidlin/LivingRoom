@@ -19,6 +19,8 @@ gem 'paperclip', '~> 4.2'
 
 gem 'angular-rails-templates'
 
+gem 'rails_12factor'
+
 group :development, :test do
 
   #add in the gem for rspec
