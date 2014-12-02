@@ -8,7 +8,7 @@
 <input style="margin-left: 40vw; width: 300px" ng-model="movieSearched" placeholder="Search for a movie">
 <button ng-click="searchMovies(movieSearched)"><span class="glyphicon glyphicon-search"></button>
 </span>
-<div ng-show="oneMovie" ng-model="movieInfo" style="width: 80vw; height: 300px; margin: auto; background: rgba(255,255,255, .5); padding: 10px; border-radius:10px ">
+<div ng-show="oneMovie" ng-model="movieInfo" style="width: 80vw; height: 250px; margin: auto; background: rgba(255,255,255, .5); padding: 10px; border-radius:10px;  ">
 	<h1>{{movieInfo.title}}</h1><br>
 	<!-- from our database -->
 	{{movieInfo.description}}
