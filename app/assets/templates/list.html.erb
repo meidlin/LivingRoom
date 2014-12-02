@@ -4,6 +4,7 @@
 .navigationColumn{
 	border: 1px black solid;
 	height: 800px;
+	position:relative;
 	width: 14%;
 }
 
@@ -16,9 +17,11 @@
 }
 
 .moviesColumn{
-	width: 84%;
+	width: 82%;
 	height: 800px;
 	border: 1px solid black;
+	float:right;
+	margin-top: -800px;
 }
 
 .wrapper{
@@ -40,7 +43,6 @@
 			<input ng-model="listName" placeholder="list name plz">
 			<button ng-click="addList()">Add</button>
 		</div>
-
 		<div class="currentLists">
 			<h3>My Lists</h3>
 			<div ng-repeat="entry in lists">
@@ -53,7 +55,7 @@
 	</div>
 
 	<div class="moviesColumn">
-		<div ng-repeat="movie in arrayMovies" style="display: inline-block">
+		<div ng-repeat="movie in arrayMovies" style="display: block .col-md-4">
 			<img src={{movie.image_url}}></img>
 			{{movie.title}}
 		</div>

@@ -3,9 +3,9 @@
 // *= require_tree .
 // *= require_self
 body {
-  background-color: rgb(229,228,223);
   background-image: url('http://gbates.com/wp-content/uploads/2014/11/Fantastic-Modern-Living-Room-Decorating-With-Black-Uphosltered-Sofa-And-Wall-Mounted-Tv-Setup-And-Black-Coffee-Table-And-Chromed-Bar-Stools.jpg');
   background-size: 100%;
+  background-repeat: no-repeat;
   z-index: -1;
 }
 @font-face{
@@ -135,6 +135,7 @@ a {
   font-size: 15px;
   margin-top: -16px;
   margin-left: 45px;
+  color:white;
 }
 
 .form-control {
@@ -152,6 +153,7 @@ a {
 }
 .runtime {
   margin-left: 50px;
+  color:white;
 }
 
 .profile {
@@ -186,7 +188,7 @@ button {
   background: none;
   border: none; 
   font-size: 40px;
-  color: black;
+  color: white;
 } 
   }
 button:focus {outline:0 !important;}
