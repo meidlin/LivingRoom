@@ -1,25 +1,36 @@
-== README
+== LivingRoom
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+LivingRoom is
 
-Things you may want to cover:
+LivingRoom is being hosted on heroku at:
+https://livingroom.herokuapp.com/
 
-* Ruby version
+To run the application locally:
+git clone https://github.com/meidlin/LivingRoom.git
+/cd LivingRoom
+bundle install
+rake db:create
+rake db:migrate
+rake db:seed
+rails s
+**Make sure to have Postgresql running**
 
-* System dependencies
+Application is run on the following:
+Rails 4.1.6 for back end
+Bower for organizing dependencies
+AngularJS for front end
+Bootstrap 3.2.0 for styling
+RSpec Rails 3.0.0 for test driven development
+bcrypt 3.1.7 for signup/login authentication
 
-* Configuration
+The following APIs are being used:
+Rotten Tomatoes - http://developer.rottentomatoes.com/docs
+feedme - http://feedmeapp.herokuapp.com
 
-* Database creation
+API endpoints for LivingRoom include:
+https://livingroom.herokuapp.com/api/movies
+For a list of movies in the database
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
 
