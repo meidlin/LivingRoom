@@ -28,11 +28,13 @@ Application is run on the following:
   AngularJS for front end  
   Bootstrap 3.2.0 for styling  
   RSpec Rails 3.0.0 for test driven development  
-  bcrypt 3.1.7 for signup/login authentication  
+  bcrypt 3.1.7 for signup/login authentication
+  Angular PubNub for chatroom
 
-The following APIs are being used:  
+The following databases are being used:  
   Rotten Tomatoes - http://developer.rottentomatoes.com/docs  
-  feedme - http://feedmeapp.herokuapp.com  
+  feedme - http://feedmeapp.herokuapp.com 
+  PubNub - http://www.pubnub.com/
 
 API endpoints for LivingRoom include:  
   https://livingroom.herokuapp.com/api/movies  
