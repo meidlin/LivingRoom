@@ -1,69 +1,39 @@
-<style type="text/css">
 
-
-.navigationColumn{
-	border: 1px black solid;
-	height: 800px;
-	position:relative;
-	width: 14%;
-}
-
-.createList{
-	background-color:white;
-}
-
-.currentLists{
-	background-color:yellow;
-}
-
-.moviesColumn{
-	width: 82%;
-	height: 800px;
-	border: 1px solid black;
-	float:right;
-	margin-top: -800px;
-}
-
-.wrapper{
-	display: inline-block;
-	width: 100%;
-	height: 800px;
-    border: solid 2px red;
-}
-
-.movieImage{
-	width: 150px;
-	height: 190px;
-}
-
-</style>
 <br>
 <br>
 <br>
 
 <div class="wrapper">
-	<div class="navigationColumn">
-		<div class="createList">
-			<h3>Hey {{currentUser.email}} Create a List, Yo</h3>
-			<input ng-model="listName" placeholder="list name plz">
-			<button ng-click="addList()">Add</button>
-		</div>
-		<div class="currentLists">
-			<h3>My Lists</h3>
-			<div ng-repeat="entry in lists">
-				<div ng-click="getMoviesForList(entry.id)">
-				{{entry.name}}
-				</div>
-			</div>
-		      
-		</div>
-	</div>
+  <div class="navigationColumn">
+    <div class="createList">
+      <div class="list-header">
+       <h2>Create Your List</h2>
+      </div>
+      <div class="current-email">
+      <br>
+      <br>
+      </div>
+      <div class="input">
+        <input ng-model="listName" placeholder="List Name">
+      <div class="add">
+        <button ng-click="addList()">Add</button>
+      </div>
+      </div>
+    </div>
+    <div class="currentLists">
+      <h3>My Lists</h3>
+      <div ng-repeat="entry in lists">
+        <div ng-click="getMoviesForList(entry.id)">
+        {{entry.name}}
+        </div>
+      </div>     
+    </div>
+  </div>
 
-	<div class="moviesColumn">
-		<div ng-repeat="movie in arrayMovies" style="display: block .col-md-4">
-			<img src={{movie.image_url}} class="movieImage"></img>
-			{{movie.title}}
-		</div>
-	</div>
-</div>
+  <div class="moviesColumn">
+    <div ng-repeat="movie in arrayMovies" class= "col-md-1">
+      <img src={{movie.image_url}} class="movieImage"></img>
+    </div>
+  </div>
 
+</div

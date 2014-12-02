@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :movies, only: [ :show, :index, :create, :update, :destroy]
     resources :lists, only: [ :show, :index, :create, :update, :destroy]
     resources :movielists, only: [ :show, :index, :create, :update, :destroy]
+    resources :foods, only: [:index]
   end
 
   resources :sessions
