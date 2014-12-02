@@ -14,8 +14,23 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+    <div class="collapse navbar-collapse col-xs-6 col-md-4" id="bs-example-navbar-collapse-1 ">
+      <ul class="nav navbar-nav">
+        
+        <li><a ui-sref="movie"><div class="browse-movies">Browse Movies</div></a></li>
+        </span>
+        <li><a ui-sref="list"><div class="lists">Lists</div></a></li>
+        <li><a ui-sref="food"><div class="food">Food</div></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="chat"><div class= "chat">Chat</div></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
         <li class="dropdown">
           <a href=""class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -31,46 +46,26 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<<<<<<< HEAD
 
 <script type="text/javascript">
-  var currentUser = <%=raw current_user.to_json %>;
+var currentUser = <%=raw current_user.to_json %>;
 </script>
 
 <!-- end header -->
 <div ui-view></div>
 
-=======
-<!-- end header -->
-<div ui-view></div>
-
 <div class="background-image">
 </div>
->>>>>>> samantha
 
+<<<<<<< HEAD
 <!-- footer navbar below -->
 <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse col-xs-6 col-md-4" id="bs-example-navbar-collapse-1 ">
-      <ul class="nav navbar-nav">
-        
-        <li><a ui-sref="movie"><span class="glyphicon glyphicon-film" aria-hidden="true" class="film-icon"></a></li>
-        </span>
-        <li><a ui-sref="list"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" class="list-icon"></a></li>
-
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="group">Groups</a></li>
-        <li><a ui-sref="chat"><span class="glyphicon glyphicon-user" aria-hidden="true" class="chat-user"></a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<<<<<<< HEAD
 =======
+>>>>>>> mike
 
->>>>>>> samantha
 <!-- end footer navbar -->
