@@ -3,8 +3,7 @@
 LivingRoom is
 
 LivingRoom is being hosted on heroku at:
-
-https://livingroom.herokuapp.com/
+  https://livingroom.herokuapp.com/
 
 To run the application locally:
 git clone https://github.com/meidlin/LivingRoom.git
@@ -34,8 +33,3 @@ API endpoints for LivingRoom include:
   For a list of movies in the database  
 
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
