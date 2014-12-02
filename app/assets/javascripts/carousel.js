@@ -3,7 +3,7 @@ $( document ).ready( function(){
 (function($) {
   var slider = $('div.slider').css('overflow', 'hidden'),
     imgs = slider.find('movie'),
-    imgWidth = '300px', //hard coded width of scroll 
+    imgWidth = '320px', //hard coded width of scroll 
     imgsLen = imgs.length,
     current = 1, //keep track of where user is 
     totalImgsWidth = imgsLen * imgWidth;
