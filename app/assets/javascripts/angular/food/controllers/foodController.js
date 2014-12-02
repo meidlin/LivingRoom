@@ -5,4 +5,6 @@ angular.module('myApp')
 			console.log(data.data);
 			$scope.foods = data.data;
 		})
-}]);
+	};
+	$scope.searchFood()
+]);
