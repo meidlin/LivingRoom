@@ -2,11 +2,18 @@
 @import url("https//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 // *= require_tree .
 // *= require_self
+html { 
+   
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+ 
+  // z-index: -1;
+}
+
 body {
-  background-image: url('livingroom_background.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
+  background: url('livingroom_background.jpg') no-repeat center center fixed;
+   background-size: cover;
 }
 @font-face{
   font-family: 'Story Book';
@@ -208,6 +215,8 @@ button:focus {outline:0 !important;}
   margin: auto;
 
 }
+
+
 
 
 

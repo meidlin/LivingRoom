@@ -25,6 +25,7 @@ angular.module('myApp')
 		api.createList($scope.listName, $scope.currentUser);
 		// CLEAR the input after add planet
 		$scope.lists.push({name: $scope.listName});
+		alert("you've succesfully created " + $scope.listName);
 	};
 
 }]);

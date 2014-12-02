@@ -35,8 +35,11 @@
 	height: 190px;
 }
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> mike
 </style>
 <br>
 <br>
@@ -60,8 +63,13 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
+	<div class="moviesColumn">
+		<div ng-repeat="movie in arrayMovies" style="display: block .col-md-4">
+=======
 	<div class="moviesColumn row">
 		<div ng-repeat="movie in arrayMovies" class="col-md-4">
+>>>>>>> mike
 			<img src={{movie.image_url}} class="movieImage"></img>
 			<div> {{movie.title}}</div>
 			
