@@ -48,7 +48,9 @@ angular.module('myApp')
   // };
 
   $scope.addMovieToList = function(movieId, listId){
-  	// console.log(movieId);
+  	alert("This movie was added to your list!");
+
+    //logic to prevent duplicate movies to list. 
   	api.createMovielist(movieId, listId);
   };
 
