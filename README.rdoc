@@ -1,6 +1,6 @@
 == LivingRoom
 
-LivingRoom is
+LivingRoom is an Enterprise SaaS, Cloud-Oriented Algorithmic Machine Learning Movie Discovery Suggestion Engine Provider. We are here to distrupt the quantum physics and relative travel space. 
 
 LivingRoom is being hosted on heroku at:
   https://livingroom.herokuapp.com/
