@@ -17,6 +17,7 @@ angular.module('myApp')
 		
 	$scope.getMoviesForList = function(id){
 		api.getListMovies(id).then(function(data){
+			console.log(data.data);
 			$scope.arrayMovies = data.data;
 		});
 	};	
