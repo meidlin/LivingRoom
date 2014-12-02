@@ -1,6 +1,15 @@
 <br>
 <br>
 <div class="container">
+<<<<<<< HEAD
+
+	<h4 style="background:white; width: 20vw; text-align: center; border: 2px solid black; border-radius: 5px; background: rgba(255,255,255, .7); margin: auto">Online Users {{users.length}}</h4>
+		<ul style="overflow: scroll; height: 80px; width: 200px;">
+			<li ng-repeat="user in users">{{user}}</li>
+		</ul>
+	<h4 style="background:white; width: 20vw; text-align: center; border: 2px solid black; border-radius: 5px; background: rgba(255,255,255, .7); margin: auto">Chat History {{messages.length}}</h4>
+	<form style="margin:auto; width: 40vw; padding: 10px;" ng-submit='publish()'>
+=======
 	
 	<div class="header1">
 		<h4>Online Users {{users.length}}</h4>
@@ -15,12 +24,17 @@
 	</div>
 	<div class="chat-form">
 		<form style="margin:auto; width: 40vw; padding: 10px;" ng-submit='publish()'>
+>>>>>>> samantha
 		<input type="text" ng-model='newMessage' />
 		<input type="submit" value="Send" />
 		<button ng-click="subscribe()">Subscribe to chat</button>
 		<button ng-click="unsubcribeChannel()">Unsubscribe</button>
+<<<<<<< HEAD
+	</form>
+=======
 		</form>
 	</div>
+>>>>>>> samantha
 	<div class="well" style="width: 75vw; margin: auto; background: rgba(255, 255, 255, .7)">
 		<ul ng-model="channel" style="font-size: 2em"><strong>Welcome to {{channel}}</strong></ul>
 		<ul style="overflow: scroll; height: 300px; width: 70vw;background: rgba(255, 255, 255, .8); border-radius: 5px">
