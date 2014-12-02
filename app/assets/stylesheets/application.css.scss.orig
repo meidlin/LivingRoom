@@ -3,7 +3,10 @@
 // *= require_tree .
 // *= require_self
 body {
-  background-color: rgb(229,228,223);
+  background-image: url('http://gbates.com/wp-content/uploads/2014/11/Fantastic-Modern-Living-Room-Decorating-With-Black-Uphosltered-Sofa-And-Wall-Mounted-Tv-Setup-And-Black-Coffee-Table-And-Chromed-Bar-Stools.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 @font-face{
   font-family: 'Story Book';
@@ -12,8 +15,9 @@ body {
 .app-name {
   font-family: Story Book;
   color: black;
-  font-size: 50px;
+  font-size: 80px;
   text-align: center;
+  background-color: white;
 }
 
 .signup-logo {
@@ -22,7 +26,7 @@ body {
   top: 240px;
   left: 875px;
   font-size: 15px;
-  color: black;
+  color: white;
 }
 
 .signup-form {
@@ -30,7 +34,7 @@ body {
   font-family: verdana;
   top: 320px;
   left: 875px;
-  color: black;
+  color: white;
 }
 
 .login-logo {
@@ -39,7 +43,7 @@ body {
   top: -70px;
   left: -600px;
   font-size: 15px;
-  color: black;
+  color: white;
 }
 
 .login-form {
@@ -47,7 +51,7 @@ body {
   font-family: verdana;
   top: 30px;
   left: -600px;
-  color: black;
+  color: white;
 }
 
 .form-control {
@@ -82,22 +86,26 @@ a {
 
 .box1 {
   position: absolute;
-  width: 400px;
+  width: 300px;
   height: 400px;
   border: 5px solid black;
   display: inline-block;
   left: 200px; 
   top: 200px;
+  background-color: black; 
+  opacity: 0.5;
 }
 
 .box2 {
   position: absolute;
-  width: 400px;
+  width: 300px;
   height: 400px;
   border: 5px solid black;
   display: inline-block;
   left: 800px;
   top: 200px;
+  background-color: black; 
+  opacity: 0.5;
 }
 .field {
   color: black;
@@ -128,6 +136,7 @@ a {
   font-size: 15px;
   margin-top: -16px;
   margin-left: 45px;
+  color:white;
 }
 
 .form-control {
@@ -145,6 +154,7 @@ a {
 }
 .runtime {
   margin-left: 50px;
+  color:white;
 }
 
 .profile {
@@ -179,19 +189,22 @@ button {
   background: none;
   border: none; 
   font-size: 40px;
-  color: black;
+  color: white;
 } 
   }
 button:focus {outline:0 !important;}
 
-.icons{
-  margin-left: 1080px;
 <<<<<<< HEAD
-  color: black;
-=======
->>>>>>> master
+.icons{
+  margin-left: 1050px;
+  color: red;
 }
 
+.icons:hover {
+  color: red;
+}
+=======
+>>>>>>> mike
 .arrow-icon-left, .arrow-icon-right:hover {
   color: white;
 }
