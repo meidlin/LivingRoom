@@ -79,8 +79,6 @@
   <%= current_user.email %>
   <%= link_to "Log Out", sessions_path("current") %>
   <% else %>
-  <%= link_to users_path %> or
-  <%= link_to new_session_path %>
   <% end %>
 </div>
 
