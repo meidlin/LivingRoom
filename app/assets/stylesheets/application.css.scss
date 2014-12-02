@@ -185,10 +185,13 @@ button {
 button:focus {outline:0 !important;}
 
 .icons{
-  margin-left: 1180px;
-  color: black;
+  margin-left: 1050px;
+  color: red;
 }
 
+.icons:hover {
+  color: red;
+}
 .arrow-icon-left, .arrow-icon-right:hover {
   color: white;
 }
