@@ -48,9 +48,25 @@ angular.module('myApp')
   // };
 
   $scope.addMovieToList = function(movieId, listId){
-  	// console.log(movieId);
-  	api.createMovielist(movieId, listId);
+  	alert("This movie was added to your list!");
   };
 
+    //logic to prevent duplicate movies to list. 
 
-}])
+    // get the service Soutchay made (merge it in or whatever)
+    // api.getMovieIdsByListId(listId)
+    // .then(function(response) {
+    // console.log(response);
+    //   // weed out the data for movie ids
+    //   // possibly push the movie ids into an array that you can loop through down below
+    //   for (var i=0; i<movieIds.length; i ++) {
+    //     if (movieIds[i] != movieId){
+    //       api.createMovielist(movieId, listId); 
+    //     }
+    //     else alert('dang');
+    //   }
+    // });
+
+
+
+}]);

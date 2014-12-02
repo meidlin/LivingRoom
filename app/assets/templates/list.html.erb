@@ -1,18 +1,64 @@
-<br>
-<br>
-<br>
-<div>{{currentUser.email}}</div>
-    <h3>List Name</h3>
-    <input ng-model="listName">
-    <h3>URL</h3>
-    <button ng-click="addList()">Add</button>
-<div ng-repeat="movie in arrayMovies" style="display: inline-block">
-	<img src={{movie.image_url}}></img>
-	{{movie.title}}
-</div>
+<style type="text/css">
 
-<div ng-repeat="entry in lists">
-	<div ng-click="getMoviesForList(entry.id)">
-	{{entry.name}}
+
+.navigationColumn{
+	border: 1px black solid;
+	height: 800px;
+	position:relative;
+	width: 14%;
+}
+
+.createList{
+	background-color:white;
+}
+
+.currentLists{
+	background-color:yellow;
+}
+
+.moviesColumn{
+	width: 82%;
+	height: 800px;
+	border: 1px solid black;
+	float:right;
+	margin-top: -800px;
+}
+
+.wrapper{
+	display: inline-block;
+	width: 100%;
+	height: 800px;
+    border: solid 2px red;
+}
+
+</style>
+<br>
+<br>
+<br>
+
+<div class="wrapper">
+	<div class="navigationColumn">
+		<div class="createList">
+			<h3>Hey {{currentUser.email}} Create a List, Yo</h3>
+			<input ng-model="listName" placeholder="list name plz">
+			<button ng-click="addList()">Add</button>
+		</div>
+		<div class="currentLists">
+			<h3>My Lists</h3>
+			<div ng-repeat="entry in lists">
+				<div ng-click="getMoviesForList(entry.id)">
+				{{entry.name}}
+				</div>
+			</div>
+		      
+		</div>
+	</div>
+
+	<div class="moviesColumn">
+		<div ng-repeat="movie in arrayMovies" style="display: block .col-md-4">
+			<img src={{movie.image_url}}></img>
+			{{movie.title}}
+		</div>
 	</div>
 </div>
+
