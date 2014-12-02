@@ -15,7 +15,11 @@ gem 'better_errors', '~> 2.0.0'
 
 gem 'httparty'
 
+gem 'paperclip', '~> 4.2'
+
 gem 'angular-rails-templates'
+
+gem 'rails_12factor'
 
 group :development, :test do
 

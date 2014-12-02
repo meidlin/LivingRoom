@@ -7,6 +7,7 @@ describe UsersController, :type => :controller do
 		expect(response).to be_success
 		expect(response).to have_http_status(200)
 	end
+
 	it 'should go to new user page' do
 		get :new
 
@@ -20,4 +21,17 @@ describe UsersController, :type => :controller do
 		assigns[:user].should be_new_record
 		expect(response).to be_success
 	end
+
+
+	it "has an email" do
+	  #now use FactoryGirl to build a user
+	  user = FactoryGirl.build_stubbed(:a_user)
+	  expect(user.email).to_not be_nil  
+	end
+
+	it "has a password" do
+	  user = FactoryGirl.build_stubbed(:a_user)
+	  expect(user.password).to_not be_nil
+	end
+
 end
