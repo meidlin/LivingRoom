@@ -48,7 +48,7 @@
 </nav>
 
 <script type="text/javascript">
-  var currentUser = <%=raw current_user.to_json %>;
+var currentUser = <%=raw current_user.to_json %>;
 </script>
 
 <!-- end header -->
@@ -57,5 +57,15 @@
 <div class="background-image">
 </div>
 
+<<<<<<< HEAD
+<!-- footer navbar below -->
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+  </div><!-- /.container-fluid -->
+</nav>
+=======
+>>>>>>> mike
 
 <!-- end footer navbar -->
