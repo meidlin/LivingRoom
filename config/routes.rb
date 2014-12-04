@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :foods, only: [:index]
   end
 
+  get 'apisearch', to: 'movies#search', as: 'search', defaults: {format: :json} 
+
   resources :sessions
   resources :users
 
