@@ -16,6 +16,19 @@ class MoviesController < ActionController::Base
   def search
       search_query = params[:searchterm].split(' ').join('+')
       @movies = JSON.parse(HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=zf6bdxbz8w9wtrqjauznuqt4&q=" + search_query.to_s + '&page_limit=1'))
+      x = @movies["movies"][0]
+      rt_ident = x['id'].to_i
+      if Movie.where(rt_id: rt_ident).length == 0
+        new_movie = Movie.new
+        new_movie.title = x['title']
+        new_movie.description = x['synopsis']
+        new_movie.rt_id = x['id'].to_i
+        new_movie.runtime = x['runtime']
+        new_movie.critic_rating = x['ratings']['critics_score']
+        new_movie.user_rating = x['ratings']['audience_score']
+        new_movie.image_url = x['posters']['thumbnail']
+        new_movie.save
+      end
       respond_with @movies
   end
 end

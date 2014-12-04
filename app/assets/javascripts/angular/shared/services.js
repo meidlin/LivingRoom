@@ -67,6 +67,7 @@ angular.module('myApp')
     //     url: 'http://www.corsproxy.com/api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=zf6bdxbz8w9wtrqjauznuqt4&q='+ movieLookup + '&page_limit=1',
     //   })
     .then(function(response){
+        console.log(response);
         return response.data;
         })
       // console.log(movieLookup);
