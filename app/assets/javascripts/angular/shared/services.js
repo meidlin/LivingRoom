@@ -61,12 +61,13 @@ angular.module('myApp')
 
     //Search for a movie through Rotten Tomatoes
     searchMovies: function(movieLookup){
-    var promise = $http({
-        method: 'GET',
-        url: 'http://www.corsproxy.com/api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=zf6bdxbz8w9wtrqjauznuqt4&q='+ movieLookup + '&page_limit=1',
-      })
+      var promise = $http.get('apisearch', {params: {searchterm: movieLookup}})
+    // var promise = $http({
+    //     method: 'GET',
+    //     url: 'http://www.corsproxy.com/api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=zf6bdxbz8w9wtrqjauznuqt4&q='+ movieLookup + '&page_limit=1',
+    //   })
     .then(function(response){
-        return response;
+        return response.data;
         })
       // console.log(movieLookup);
       return promise;

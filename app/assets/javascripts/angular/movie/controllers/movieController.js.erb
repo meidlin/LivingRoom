@@ -37,7 +37,8 @@ angular.module('myApp')
   	// console.log(searchedMovie);
   	api.searchMovies(searchedMovie)
   	.then(function(data){
-  		$scope.movieInfo = data.data.movies[0];
+      console.log(data.movies[0]);
+  		$scope.movieInfo = data.movies[0];
   		// console.log($scope.movieInfo);
   	});
   };
