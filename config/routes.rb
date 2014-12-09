@@ -1,24 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'signup', to: 'users#index', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
-  # get 'logout', to: 'sessions#destroy', as: 'logout'
-  delete "sessions/" => "sessions#destroy", as: :destroy_session
-  # get 'movies', to: 'movies#index', as: 'movies'
-# we are going to be using Rails routes for api calls
-  scope 'api', defaults: {format: :json} do
-    resources :movies, only: [ :show, :index, :create, :update, :destroy]
-    resources :lists, only: [ :show, :index, :create, :update, :destroy]
-    resources :movielists, only: [ :show, :index, :create, :update, :destroy]
-  end
-
-  resources :sessions
-  resources :users
-
-  root 'users#index'
-end
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -73,5 +53,4 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-
+end
