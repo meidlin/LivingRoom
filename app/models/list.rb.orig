@@ -1,9 +1,0 @@
-class List < ActiveRecord::Base
-  has_many :movielists
-  has_many :movies, through: :movielists
-<<<<<<< HEAD
-  belongs_to :users
-=======
-  belongs_to :user
->>>>>>> master
-end
