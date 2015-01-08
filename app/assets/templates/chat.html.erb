@@ -10,15 +10,10 @@
 			<li style="list-style-type:none; padding-left: 10px" ng-repeat="user in users">{{user}}</li>
 		</div>
 	</div>
-<!-- 	<div class="header2">
-		<h4>Chat History {{messages.length}}</h4>
-	</div> -->
 	<div class="chat-form">
 		<form ng-submit='publish()'>
 		<input type="text" ng-model='newMessage' />
 		<input type="submit" value="Send"/>
-		<!-- <button ng-click="subscribe()">Subscribe to chat</button>
-		<button ng-click="unsubcribeChannel()" class="unsubscribe">Unsubscribe</button> -->
 		</form>
 	</div>
 	<div class="well">
