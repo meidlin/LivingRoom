@@ -2,14 +2,14 @@
 @import url("https//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 // *= require_tree .
 // *= require_self
-html { 
+
    
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
   // -o-background-size: cover;
  
   // z-index: -1;
-}
+
 
 body {
   background: url('livingroom_background.jpg') no-repeat center center fixed;
@@ -57,6 +57,10 @@ body {
   font-family: verdana;
   top: 30px;
   left: -600px;
+  color: white;
+}
+
+label {
   color: white;
 }
 
